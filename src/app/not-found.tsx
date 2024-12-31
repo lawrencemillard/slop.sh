@@ -1,27 +1,29 @@
 import Link from "next/link";
 import GridPattern from "@/components/ui/grid-pattern";
-import Head from "next/head";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "404 | slop.sh",
+  description: "Page Not Found",
+  icons: [
+    {
+      url: "/favicon.svg",
+      sizes: "any",
+      type: "image/svg+xml",
+    },
+  ],
+  openGraph: {
+    type: "website",
+    url: "https://slop.sh",
+    title: "404 | slop.sh",
+    description: "Page Not Found",
+  },
+  metadataBase: new URL("https://slop.sh"),
+};
 
 export default function NotFound() {
   return (
     <>
-      <Head>
-        <title>404 - Page Not Found</title>
-        <meta name="description" content="The page you are looking for could not be found." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://slop.sh/404" />
-        <meta property="og:title" content="404 - Page Not Found" />
-        <meta property="og:description" content="The page you are looking for could not be found." />
-        <meta property="og:image" content="https://slop.sh/meta.png" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="200" />
-        <meta property="og:image:alt" content="Slop" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://slop.sh/404" />
-        <meta name="twitter:title" content="404 - Page Not Found" />
-        <meta name="twitter:description" content="The page you are looking for could not be found." />
-        <meta name="twitter:image" content="https://slop.sh/meta.png" />
-      </Head>
       <GridPattern
         className="fixed inset-0 text-primary/10 z-0"
         height={50}

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://slop.sh",
-    title: "slop.sh",
+    title: "Home | slop.sh",
     description: "coming soon...",
     images: [
       {

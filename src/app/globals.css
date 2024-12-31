@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "League Spartan";
-  src: url("/src/assets/fonts/LeagueSpartan-Regular.ttf") format("truetype");
+  src: url("/fonts/LeagueSpartan-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
