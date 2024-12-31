@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "coming soon...",
     images: [
       {
-        url: "/meta.png",
+        url: "https://r2.e-z.host/ca19848c-de8c-4cae-9a10-858d6fd864b7/kkhp19rx.png",
         width: 442,
         height: 109,
         alt: "Slop",
