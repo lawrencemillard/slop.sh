@@ -1,25 +1,5 @@
 import Link from "next/link";
 import GridPattern from "@/components/ui/grid-pattern";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "404 | slop.sh",
-  description: "Page Not Found",
-  icons: [
-    {
-      url: "/favicon.svg",
-      sizes: "any",
-      type: "image/svg+xml",
-    },
-  ],
-  openGraph: {
-    type: "website",
-    url: "https://slop.sh",
-    title: "404 | slop.sh",
-    description: "Page Not Found",
-  },
-  metadataBase: new URL("https://slop.sh"),
-};
 
 export default function NotFound() {
   return (

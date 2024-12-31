@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
 
 const urlMap: Record<string, { url: string; name: string }> = {
   bio: { url: "https://e-z.bio/kc", name: "Bio" },
@@ -11,13 +11,12 @@ const urlMap: Record<string, { url: string; name: string }> = {
   twitter: { url: "https://twitter.com/_keirandev", name: "Twitter" },
 };
 
-export async function GET(req: NextRequest) {
-  const { pathname } = new URL(req.url);
-  const id = pathname.split("/").pop();
+export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+  const { id } = params;
 
   if (id && urlMap[id]) {
     return NextResponse.redirect(urlMap[id].url);
   } else {
-    return NextResponse.json({ message: "Not Found" }, { status: 404 });
+    return NextResponse.json({ message: 'Not Found' }, { status: 404 });
   }
 }

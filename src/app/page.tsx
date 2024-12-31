@@ -2,35 +2,6 @@ import GridPattern from "@/components/ui/grid-pattern";
 import LetterPullup from "@/components/ui/letter-pullup";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "slop.sh",
-  description: "coming soon...",
-  icons: [
-    {
-      url: "/favicon.svg",
-      sizes: "any",
-      type: "image/svg+xml",
-    },
-  ],
-  openGraph: {
-    type: "website",
-    url: "https://slop.sh",
-    title: "Home | slop.sh",
-    description: "coming soon...",
-    images: [
-      {
-        url: "/meta.png",
-        width: 800,
-        height: 200,
-        alt: "Slop",
-        type: "image/png",
-      },
-    ],
-  },
-  metadataBase: new URL("https://slop.sh"),
-};
 
 export default function Home() {
   return (
