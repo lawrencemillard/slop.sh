@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ogImage from '@/assets/meta.png';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,9 +19,9 @@ export const metadata: Metadata = {
     description: "coming soon...",
     images: [
       {
-        url: "https://r2.e-z.host/ca19848c-de8c-4cae-9a10-858d6fd864b7/kkhp19rx.png",
-        width: 442,
-        height: 109,
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
         alt: "Slop",
         type: "image/png",
       },
