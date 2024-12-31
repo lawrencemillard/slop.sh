@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="text-2xl font-bold ml-4">
           <a
             className="hover:bg-accent/10 rounded p-2 transition-colors duration-200 ease-in-out"
-            href="https://github.com/keirim/slop.sh"
+            href="https://github.com/keirim"
             target="_blank"
           >
             slop.sh
