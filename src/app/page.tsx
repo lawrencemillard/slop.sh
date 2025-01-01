@@ -1,7 +1,6 @@
 import GridPattern from "@/components/ui/grid-pattern";
-import LetterPullup from "@/components/ui/letter-pullup";
 import Navbar from "@/components/Navbar";
-import Link from "next/link";
+import Welcome from "@/components/Welcome";
 
 export default function Home() {
   return (
@@ -13,19 +12,7 @@ export default function Home() {
         style={{ opacity: 0.1 }}
       />
       <Navbar />
-      <div className="bg-background text-foreground flex flex-col items-center justify-center h-screen">
-        <Link
-          className="text-4xl font-bold glow hover:bg-primary/10 rounded transition-colors duration-200 ease-in-out px-8 select-none"
-          href="/"
-          about="slop.sh"
-        >
-          <LetterPullup
-            words="slop.sh"
-            className="text-foreground"
-            delay={0.15}
-          />
-        </Link>
-      </div>
+      <Welcome />
     </>
   );
 }
