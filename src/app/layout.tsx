@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "slop.sh",
-  description: "coming soon...",
+  description: "Coming Soon",
   icons: [
     {
       url: "/favicon.svg",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://slop.sh",
     title: "slop.sh",
-    description: "coming soon...",
+    description: "Coming Soon",
     images: [
       {
         url: "/meta.png",
