@@ -30,20 +30,29 @@ export default function Welcome() {
         </HyperText>
       </motion.div>
 
+      <motion.p
+          className="text-4xl font-bold mb-4"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 4 }}
+        >
+          Coming soon to a browser near you
+        </motion.p>
+
       <motion.div
         className="flex items-center"
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 3.3 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 5 }}
       >
         <motion.h1 className="text-2xl font-bold">
           by{" "}
           <Link
-            className="bg-clip-text text-transparent bg-gradient-to-br from-fuchsia-400 to-purple-700"
-            target="_blank"
-            href="https://github.com/keirim"
+        className="bg-clip-text text-transparent bg-gradient-to-br from-fuchsia-400 to-purple-700"
+        target="_blank"
+        href="https://github.com/keirim"
           >
-            Keiran
+        Keiran
           </Link>
         </motion.h1>
       </motion.div>

@@ -8,7 +8,7 @@ export default function Navbar() {
       className="bg-background text-foreground flex items-center justify-between mt-4 h-16 z-50 w-1/2 fixed top-0 left-1/4 rounded shadow-lg border border-border"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 100 }}
+      transition={{ type: "spring", stiffness: 100, delay: 7 }}
     >
       <div className="flex items-center">
         <div className="text-2xl font-bold ml-4">
