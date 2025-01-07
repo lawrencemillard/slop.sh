@@ -31,7 +31,7 @@ export default function HomeCard() {
           >
             <div className="space-y-2">
               <h1 className="text-4xl font-bold tracking-tight">
-                Hey, I'm Keiran 👋
+                Hey, I&apos;m Keiran 👋
               </h1>
               <p className="text-lg text-muted-foreground">
                 Welcome to slop.sh — where I share my projects, ideas, and more!
@@ -62,7 +62,7 @@ export default function HomeCard() {
             <div className="pt-4 space-y-4">
               <h2 className="text-2xl font-semibold">About</h2>
               <p className="text-muted-foreground leading-relaxed">
-                I'm a full-stack developer passionate about building tools and
+                I&apos;m a full-stack developer passionate about building tools and
                 experiences that make a difference. This site serves as a hub
                 for my various projects and experiments in web development,
                 software development and other topics that interest me.
