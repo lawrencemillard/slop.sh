@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import GridPattern from "@/components/ui/grid-pattern";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -36,7 +38,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body suppressHydrationWarning={true}>
+        <GridPattern
+          className="fixed inset-0 text-primary/10 z-0"
+          height={50}
+          width={50}
+          style={{ opacity: 0.1 }}
+        />
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

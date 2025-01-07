@@ -15,6 +15,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'r2.slop.sh',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
