@@ -1,29 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <motion.nav
-      className="bg-background text-foreground flex items-center justify-between mt-4 h-16 z-50 w-1/2 fixed top-0 left-1/4 rounded shadow-lg border border-border"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 100, delay: 7 }}
-    >
-      <div className="flex items-center">
-        <div className="text-2xl font-bold ml-4">
-          <a
-            className="hover:bg-accent/10 rounded p-2 transition-colors duration-200 ease-in-out"
-            href="https://github.com/keirim"
-            target="_blank"
+    <div className="w-full flex justify-center">
+      <motion.nav
+        className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-16 z-50 w-full max-w-4xl fixed top-4 rounded-lg shadow-lg border border-border px-4"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 100, delay: 0.5 }}
+      >
+        <div className="flex items-center gap-8">
+          <Link
+            href="/"
+            className="text-2xl font-bold hover:text-primary/80 ml-4 transition-colors"
           >
             slop.sh
-          </a>
+          </Link>
+          <nav className="hidden md:flex gap-6">
+            <Link
+              href="/projects"
+              className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/blog"
+              className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
+            >
+              Blog
+            </Link>
+          </nav>
         </div>
-      </div>
-      <div className="flex items-center">
-        <h1 className="text-lg font-bold mr-4">Coming soon</h1>
-      </div>
-    </motion.nav>
+        <Link
+          href="https://github.com/keirim"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
+        >
+          GitHub
+        </Link>
+      </motion.nav>
+    </div>
   );
 }

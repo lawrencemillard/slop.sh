@@ -1,10 +1,10 @@
 import GridPattern from "@/components/ui/grid-pattern";
 import Navbar from "@/components/Navbar";
-import Welcome from "@/components/Welcome";
+import HomeCard from "@/components/HomeCard";
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <GridPattern
         className="fixed inset-0 text-primary/10 z-0"
         height={50}
@@ -12,7 +12,9 @@ export default function Home() {
         style={{ opacity: 0.1 }}
       />
       <Navbar />
-      <Welcome />
-    </>
+      <main className="flex-1 container mx-auto">
+        <HomeCard />
+      </main>
+    </div>
   );
 }

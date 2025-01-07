@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "slop.sh",
-  description: "Coming Soon",
+  description: "this site sucks lmao",
   icons: [
     {
       url: "/favicon.svg",
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://slop.sh",
     title: "slop.sh",
-    description: "Coming Soon",
+    description: "this site sucks lmao",
     images: [
       {
         url: "/meta.png",
-        width: 800,
-        height: 200,
+        width: 900,
+        height: 900,
         alt: "Slop",
         type: "image/png",
       },
@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body>{children}</body>
+      <body suppressHydrationWarning={true}>{children}</body>
     </html>
   );
 }
