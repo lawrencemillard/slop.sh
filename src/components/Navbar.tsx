@@ -1,16 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 import Link from "next/link";
 
 const navVariants = {
-  hidden: { y: -100, opacity: 0 },
+  hidden: { opacity: 0, y: 100 },
   show: {
-    y: 0,
     opacity: 1,
+    y: 0,
     transition: {
-      type: "spring",
-      stiffness: 100,
+      duration: 0.5,
       delay: 0.5,
     },
   },
@@ -20,15 +19,15 @@ const linkVariants = {
   hover: {
     scale: 1.1,
     transition: {
-      type: "spring",
-      stiffness: 300,
+      easeOut,
+      duration: 0.2,
     },
   },
 };
 
 export default function Navbar() {
   return (
-    <div className="w-full flex justify-center">
+    <div className="flex justify-center">
       <motion.nav
         className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-16 z-50 w-full max-w-4xl fixed top-4 rounded-lg shadow-lg border border-border px-4"
         initial="hidden"

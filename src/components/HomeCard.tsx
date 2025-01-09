@@ -31,7 +31,7 @@ export default function HomeCard() {
       initial="hidden"
       animate="show"
       variants={containerVariants}
-      className="w-full max-w-4xl mx-auto mt-[calc(4rem+theme(space.24))] px-4 sm:px-6 lg:px-8"
+      className="w-full max-w-[60rem] mx-auto mt-[calc(4rem+theme(space.12))] px-4 sm:px-6 lg:px-8"
     >
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border">
         <CardContent className="p-8">
@@ -48,7 +48,7 @@ export default function HomeCard() {
                 transition={{ delay: 0.2 }}
                 className="text-4xl font-bold tracking-tight"
               >
-                Hey, I&apos;m Keiran 👋
+                Hey, I&apos;m Keiran
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export default function HomeCard() {
                 transition={{ delay: 0.3 }}
                 className="text-lg text-muted-foreground"
               >
-                Welcome to slop.sh — where I share my projects, ideas, and more!
+                Welcome to slop.sh — where I share my projects and stuff
               </motion.p>
             </div>
 
@@ -97,82 +97,21 @@ export default function HomeCard() {
                 I&apos;m a full-stack developer passionate about building tools
                 and experiences that make a difference. This site serves as a
                 hub for my various projects and experiments in web development,
-                software development and other topics that interest me.
+                software development and other topics that interest me. I have
+                been learning how to develop software for the past 2 years or
+                so, and have recently began to take web development more
+                seriously in the last 2 months or so. I am currently working on
+                a few projects primarlily in the web development space, and am
+                really happy with the progress I have made so far.
               </p>
             </motion.div>
 
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <Link href="/projects" passHref>
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <Card className="bg-secondary/50 cursor-pointer">
-                    <CardContent className="p-6">
-                      <motion.h3
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.7 }}
-                        className="text-xl font-semibold mb-2"
-                      >
-                        Projects
-                      </motion.h3>
-                      <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8 }}
-                        className="text-muted-foreground"
-                      >
-                        Explore my latest experiments and open-source
-                        contributions
-                      </motion.p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </Link>
-              <Link href="/blog" passHref>
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <Card className="bg-secondary/50 cursor-pointer">
-                    <CardContent className="p-6">
-                      <motion.h3
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.9 }}
-                        className="text-xl font-semibold mb-2"
-                      >
-                        Blog
-                      </motion.h3>
-                      <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.0 }}
-                        className="text-muted-foreground"
-                      >
-                        Thoughts and tutorials on development, design, and
-                        technology
-                      </motion.p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </Link>
-            </motion.div>
-            <motion.div
-              className="pt-4 hidden"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1 }}
-            >
-              <Card className="bg-secondary/50">
+              <Card className="bg-card">
                 <CardContent className="p-6 flex items-center">
                   <FaEllipsisH className="h-6 w-6 mr-8" />
                   <div>
