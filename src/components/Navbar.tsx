@@ -3,17 +3,6 @@
 import { easeOut, motion } from "framer-motion";
 import Link from "next/link";
 
-const navVariants = {
-  hidden: { opacity: 0, y: 100 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      delay: 0.5,
-    },
-  },
-};
 
 const linkVariants = {
   hover: {
@@ -28,12 +17,7 @@ const linkVariants = {
 export default function Navbar() {
   return (
     <div className="flex justify-center">
-      <motion.nav
-        className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-16 z-50 w-full max-w-4xl fixed top-4 rounded-lg shadow-lg border border-border px-4"
-        initial="hidden"
-        animate="show"
-        variants={navVariants}
-      >
+      <nav className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-16 z-50 w-full max-w-4xl fixed top-4 rounded-lg shadow-lg border border-border px-4">
         <div className="flex items-center gap-8">
           <motion.div whileHover="hover" variants={linkVariants}>
             <Link
@@ -72,7 +56,7 @@ export default function Navbar() {
             GitHub
           </Link>
         </motion.div>
-      </motion.nav>
+      </nav>
     </div>
   );
 }

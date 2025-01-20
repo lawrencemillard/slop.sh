@@ -1,11 +1,13 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import LastFm from "@/components/LastFm";
 import SocialLinks from "@/components/SocialLinks";
 import AboutSection from "@/components/AboutSection";
 import WorkInProgress from "@/components/WorkInProgress";
+import TypewriterComponent from "typewriter-effect";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 100 },
@@ -20,6 +22,15 @@ const containerVariants = {
 };
 
 export default function HomeCard() {
+  const [showTypewriter, setShowTypewriter] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTypewriter(true);
+    }, 400);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <motion.div
       initial="hidden"
@@ -28,7 +39,7 @@ export default function HomeCard() {
       className="w-full max-w-[60rem] mx-auto mt-[calc(4rem+theme(space.32))] px-4 sm:px-6 lg:px-8"
     >
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border">
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4 hidden sm:block">
           <LastFm />
         </div>
         <CardContent className="p-8">
@@ -50,10 +61,19 @@ export default function HomeCard() {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-lg text-muted-foreground"
+                transition={{ delay: 0.4 }}
+                className="text-lg text-muted-foreground font-semibold"
               >
-                Welcome to slop.sh — where I share my projects and stuff
+                {showTypewriter && (
+                  <TypewriterComponent
+                    options={{
+                      delay: 50,
+                      strings: ["Welcome to slop.sh", "Work in progress"],
+                      loop: true,
+                      autoStart: true,
+                    }}
+                  />
+                )}
               </motion.p>
             </div>
 
