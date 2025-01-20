@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         hostname: "r2.slop.sh",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "*",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
 import GridPattern from "@/components/ui/grid-pattern";
 import "./globals.css";
 
@@ -45,7 +44,6 @@ export default function RootLayout({
           width={50}
           style={{ opacity: 0.1 }}
         />
-        <Navbar />
         {children}
       </body>
     </html>

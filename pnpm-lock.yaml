@@ -16,10 +16,10 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
       framer-motion:
-        specifier: ^11.15.0
-        version: 11.15.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      motion:
         specifier: ^11.15.0
         version: 11.15.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       next:
@@ -40,6 +40,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.17)
+      use-last-fm:
+        specifier: ^0.6.1
+        version: 0.6.1(react@19.0.0)
     devDependencies:
       "@eslint/eslintrc":
         specifier: ^3
@@ -1051,6 +1054,13 @@ packages:
       }
     engines: { node: ">= 0.4" }
 
+  dequal@2.0.2:
+    resolution:
+      {
+        integrity: sha512-q9K8BlJVxK7hQYqa6XISGmBZbtQQWVXSrRrWreHC94rMt1QL/Impruc+7p2CYSYuVIUr+YCt6hjrs1kkdJRTug==,
+      }
+    engines: { node: ">=6" }
+
   detect-libc@2.0.3:
     resolution:
       {
@@ -1076,6 +1086,13 @@ packages:
         integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==,
       }
     engines: { node: ">=0.10.0" }
+
+  dotenv@16.4.7:
+    resolution:
+      {
+        integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==,
+      }
+    engines: { node: ">=12" }
 
   dunder-proto@1.0.1:
     resolution:
@@ -2012,23 +2029,6 @@ packages:
         integrity: sha512-Xg+8xnqIJTpr0L/cidfTTBFkvRw26ZtGGuIhA94J9PQ2p4mEa06Xx7QVYZH0BP+EpMSaDlu+q0I0mmvwADPsaQ==,
       }
 
-  motion@11.15.0:
-    resolution:
-      {
-        integrity: sha512-iZ7dwADQJWGsqsSkBhNHdI2LyYWU+hA1Nhy357wCLZq1yHxGImgt3l7Yv0HT/WOskcYDq9nxdedyl4zUv7UFFw==,
-      }
-    peerDependencies:
-      "@emotion/is-prop-valid": "*"
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      "@emotion/is-prop-valid":
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-
   ms@2.1.3:
     resolution:
       {
@@ -2710,6 +2710,14 @@ packages:
       }
     engines: { node: ">= 0.4" }
 
+  swr@0.4.2:
+    resolution:
+      {
+        integrity: sha512-SKGxcAfyijj/lE5ja5zVMDqJNudASH3WZPRUakDVOePTM18FnsXgugndjl9BSRwj+jokFCulMDe7F2pQL+VhEw==,
+      }
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0
+
   tailwind-merge@2.6.0:
     resolution:
       {
@@ -2847,6 +2855,15 @@ packages:
       {
         integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==,
       }
+
+  use-last-fm@0.6.1:
+    resolution:
+      {
+        integrity: sha512-mbLB9NpNFC2mDpvUgylkRvjWAITjVO3j2IPgtSrdanWBEXRsjMyPaEaDUsS5rJ0wSpvYAPyOQ9XxCUve6vKqpQ==,
+      }
+    engines: { node: ">=10" }
+    peerDependencies:
+      react: ">=17"
 
   util-deprecate@1.0.2:
     resolution:
@@ -3503,6 +3520,8 @@ snapshots:
       has-property-descriptors: 1.0.2
       object-keys: 1.1.1
 
+  dequal@2.0.2: {}
+
   detect-libc@2.0.3:
     optional: true
 
@@ -3513,6 +3532,8 @@ snapshots:
   doctrine@2.1.0:
     dependencies:
       esutils: 2.0.3
+
+  dotenv@16.4.7: {}
 
   dunder-proto@1.0.1:
     dependencies:
@@ -4206,14 +4227,6 @@ snapshots:
 
   motion-utils@11.14.3: {}
 
-  motion@11.15.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
-    dependencies:
-      framer-motion: 11.15.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      tslib: 2.8.1
-    optionalDependencies:
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   ms@2.1.3: {}
 
   mz@2.7.0:
@@ -4674,6 +4687,11 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
+  swr@0.4.2(react@19.0.0):
+    dependencies:
+      dequal: 2.0.2
+      react: 19.0.0
+
   tailwind-merge@2.6.0: {}
 
   tailwindcss-animate@1.0.7(tailwindcss@3.4.17):
@@ -4787,6 +4805,11 @@ snapshots:
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
+
+  use-last-fm@0.6.1(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      swr: 0.4.2(react@19.0.0)
 
   util-deprecate@1.0.2: {}
 
