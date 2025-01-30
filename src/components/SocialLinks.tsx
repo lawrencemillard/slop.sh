@@ -1,4 +1,12 @@
-import { FaBluesky, FaGithub, FaTwitter, FaDiscord, FaYoutube, FaLastfm, FaRegEnvelope } from "react-icons/fa6";
+import {
+  FaBluesky,
+  FaGithub,
+  FaTwitter,
+  FaDiscord,
+  FaYoutube,
+  FaLastfm,
+  FaRegEnvelope,
+} from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -6,10 +14,26 @@ import { motion } from "framer-motion";
 const socialLinks = [
   { icon: FaGithub, href: "https://github.com/keirim", label: "GitHub" },
   { icon: FaTwitter, href: "https://twitter.com/_keirandev", label: "Twitter" },
-  { icon: FaDiscord, href: "https://discord.com/users/1230319937155760131", label: "Discord" },
-  { icon: FaYoutube, href: "https://www.youtube.com/@KeiranScript", label: "YouTube" },
-  { icon: FaBluesky, href: "https://bsky.app/profile/keiran.cc", label: "Bluesky" },
-  { icon: FaLastfm, href: "https://www.last.fm/user/Kuuichi2", label: "Last.fm" },
+  {
+    icon: FaDiscord,
+    href: "https://discord.com/users/1230319937155760131",
+    label: "Discord",
+  },
+  {
+    icon: FaYoutube,
+    href: "https://www.youtube.com/@KeiranScript",
+    label: "YouTube",
+  },
+  {
+    icon: FaBluesky,
+    href: "https://bsky.app/profile/keiran.cc",
+    label: "Bluesky",
+  },
+  {
+    icon: FaLastfm,
+    href: "https://www.last.fm/user/Kuuichi2",
+    label: "Last.fm",
+  },
   { icon: FaRegEnvelope, href: "mailto:hi@slop.sh", label: "Email" },
 ];
 

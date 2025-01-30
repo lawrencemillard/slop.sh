@@ -134,12 +134,13 @@ export default function ProjectsPage() {
                     <div className="flex items-center justify-between">
                       <CardTitle>{project.title}</CardTitle>
                       <span
-                        className={`text-xs px-2 py-1 rounded-full ${project.status === "completed"
-                          ? "bg-green-500/10 text-green-500"
-                          : project.status === "in-progress"
-                            ? "bg-yellow-500/10 text-yellow-500"
-                            : "bg-gray-500/10 text-gray-500"
-                          }`}
+                        className={`text-xs px-2 py-1 rounded-full ${
+                          project.status === "completed"
+                            ? "bg-green-500/10 text-green-500"
+                            : project.status === "in-progress"
+                              ? "bg-yellow-500/10 text-yellow-500"
+                              : "bg-gray-500/10 text-gray-500"
+                        }`}
                       >
                         {project.status}
                       </span>

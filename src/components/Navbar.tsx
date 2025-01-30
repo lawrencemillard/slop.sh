@@ -1,22 +1,38 @@
 "use client";
 
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
-
 
 const linkVariants = {
   hover: {
     scale: 1.1,
     transition: {
-      easeOut,
+      ease: "easeOut",
       duration: 0.2,
+    },
+  },
+};
+
+const navbarVariants = {
+  hidden: { opacity: 0, y: -20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.3,
     },
   },
 };
 
 export default function Navbar() {
   return (
-    <div className="flex justify-center">
+    <motion.div
+      initial="hidden"
+      animate="show"
+      variants={navbarVariants}
+      className="flex justify-center"
+    >
       <nav className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-16 z-50 w-full max-w-4xl fixed top-4 rounded-lg shadow-lg border border-border px-4">
         <div className="flex items-center gap-8">
           <motion.div whileHover="hover" variants={linkVariants}>
@@ -57,6 +73,6 @@ export default function Navbar() {
           </Link>
         </motion.div>
       </nav>
-    </div>
+    </motion.div>
   );
 }
