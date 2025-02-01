@@ -25,7 +25,7 @@ export default function Coffee() {
       initial="hidden"
       animate="show"
       variants={buttonVariants}
-      className="fixed top-[18px] left-11 cursor-pointer"
+      className="fixed top-[18px] hidden sm:block left-11 cursor-pointer"
     >
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 opacity-75 blur-lg" />

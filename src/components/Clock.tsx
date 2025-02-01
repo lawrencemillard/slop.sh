@@ -16,7 +16,7 @@ export default function Clock() {
   };
 
   return (
-    <div className="fixed top-0 right-0 m-4 text-white text-xl font-mono">
+    <div className="fixed top-0 right-0 m-4 text-white text-xl font-mono hidden sm:block">
       {formatTime(time)}
     </div>
   );

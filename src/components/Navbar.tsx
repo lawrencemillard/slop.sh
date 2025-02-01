@@ -52,14 +52,14 @@ export default function Navbar() {
                 Projects
               </Link>
             </motion.div>
-            <motion.div whileHover="hover" variants={linkVariants}>
+            {/* <motion.div whileHover="hover" variants={linkVariants}>
               <Link
                 href="/blog"
                 className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
               >
                 Blog
               </Link>
-            </motion.div>
+            </motion.div> */}
           </nav>
         </div>
         <motion.div whileHover="hover" variants={linkVariants}>
