@@ -5,22 +5,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
 const images = [
-  "https://r2.slop.sh/image1.jpg",
-  "https://r2.slop.sh/image2.jpg",
-  "https://r2.slop.sh/image3.jpg",
-  "https://r2.slop.sh/image4.jpg",
-  "https://r2.slop.sh/image5.jpg",
-  "https://r2.slop.sh/image6.jpg",
-  "https://r2.slop.sh/image7.jpg",
-  "https://r2.slop.sh/image8.jpg",
-  "https://r2.slop.sh/image9.jpg",
-  "https://r2.slop.sh/image10.jpg",
-  "https://r2.slop.sh/image11.jpg",
-  "https://r2.slop.sh/image12.jpg",
-  "https://r2.slop.sh/image13.jpg",
-  "https://r2.slop.sh/image14.jpg",
-  "https://r2.slop.sh/image15.jpg",
-  "https://r2.slop.sh/image16.jpg",
+  "/mozart/image1.jpg",
+  "/mozart/image2.jpg",
+  "/mozart/image3.jpg",
+  "/mozart/image4.jpg",
+  // "/mozart/image5.jpg", // Removed
+  // "/mozart/image6.jpg", // Removed
+  "/mozart/image7.jpg",
+  "/mozart/image8.jpg",
+  "/mozart/image9.jpg",
+  "/mozart/image10.jpg",
+  "/mozart/image11.jpg",
+  "/mozart/image12.jpg",
+  "/mozart/image13.jpg",
+  "/mozart/image14.jpg",
+  "/mozart/image15.jpg",
+  "/mozart/image16.jpg",
 ];
 
 const containerVariants = {

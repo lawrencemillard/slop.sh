@@ -37,7 +37,7 @@ export default function HomeCard() {
       initial="hidden"
       animate="show"
       variants={containerVariants}
-      className="w-full max-w-[60rem] mx-auto mt-[calc(4rem+theme(space.24))] px-4 sm:px-6 lg:px-8"
+      className={`w-full max-w-[60rem] mx-auto mt-[calc(4rem+theme(space.24))] px-4 sm:px-6 lg:px-8`}
     >
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border">
         <CardContent className="p-8">
