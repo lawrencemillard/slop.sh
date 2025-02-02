@@ -1,7 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import HamburgerMenu from "./HamburgerMenu";
 
 const linkVariants = {
   hover: {
@@ -26,6 +28,21 @@ const navbarVariants = {
 };
 
 export default function Navbar() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <motion.div
       initial="hidden"
@@ -43,35 +60,50 @@ export default function Navbar() {
               slop.sh
             </Link>
           </motion.div>
-          <nav className="hidden md:flex gap-6">
-            <motion.div whileHover="hover" variants={linkVariants}>
+          {!isMobile && (
+            <nav className="hidden md:flex gap-6">
+              <motion.div whileHover="hover" variants={linkVariants}>
+                <Link
+                  href="/projects"
+                  className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
+                >
+                  Projects
+                </Link>
+              </motion.div>
+              {/* <motion.div whileHover="hover" variants={linkVariants}>
+                <Link
+                  href="/blog"
+                  className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
+                >
+                  Blog
+                </Link>
+              </motion.div> */}
+            </nav>
+          )}
+        </div>
+        <div className="flex items-center gap-8">
+          {isMobile && (
+            <div className="flex-grow flex justify-center mr-4 mt-1.5">
+              <HamburgerMenu />
+            </div>
+          )}
+          {!isMobile && (
+            <motion.div
+              whileHover="hover"
+              variants={linkVariants}
+              className="hidden md:block"
+            >
               <Link
-                href="/projects"
+                href="https://github.com/keirim"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
               >
-                Projects
+                GitHub
               </Link>
             </motion.div>
-            {/* <motion.div whileHover="hover" variants={linkVariants}>
-              <Link
-                href="/blog"
-                className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
-              >
-                Blog
-              </Link>
-            </motion.div> */}
-          </nav>
+          )}
         </div>
-        <motion.div whileHover="hover" variants={linkVariants}>
-          <Link
-            href="https://github.com/keirim"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
-          >
-            GitHub
-          </Link>
-        </motion.div>
       </nav>
     </motion.div>
   );
