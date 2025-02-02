@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import LogoSvg from "@/assets/bmc-logo.svg";
+import { Button } from "@/components/ui/button";
 
 const buttonVariants = {
   hidden: { opacity: 0 },
@@ -40,5 +41,20 @@ export default function Coffee() {
         </a>
       </div>
     </motion.div>
+  );
+}
+
+export function CoffeeButton() {
+  const handleClick = () => {
+    window.open("https://www.buymeacoffee.com/keiran", "_blank");
+  };
+
+  return (
+    <Button
+      onClick={handleClick}
+      className="bg-background hover:bg-foreground/5 transition-colors text-foreground border border-border"
+    >
+      Buy Me a Coffee
+    </Button>
   );
 }

@@ -24,13 +24,13 @@ export default function LastFm() {
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
       <Card className="bg-card">
-        <CardContent className="px-4 py-2 flex flex-col sm:flex-row items-center h-16">
+        <CardContent className="p-6 flex flex-col sm:flex-row items-center h-24">
           <Image
             src={lastFM.song.art}
-            height={50}
-            width={50}
+            height={60}
+            width={60}
             alt="Album art for track"
-            className="sm:mb-0 sm:mr-4 rounded-sm"
+            className="sm:mb-0 sm:mr-4 rounded-sm border border-border"
           />
           <div>
             <h3 className="text-lg font-semibold">Now listening to</h3>

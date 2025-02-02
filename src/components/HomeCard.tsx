@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import LastFm from "@/components/LastFm";
 import SocialLinks from "@/components/SocialLinks";
 import AboutSection from "@/components/AboutSection";
-import WorkInProgress from "@/components/WorkInProgress";
 import TypewriterComponent from "typewriter-effect";
 import Clock from "@/components/Clock";
+import { CoffeeButton } from "@/components/Coffee";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 100 },
@@ -37,11 +37,8 @@ export default function HomeCard() {
       initial="hidden"
       animate="show"
       variants={containerVariants}
-      className="w-full max-w-[60rem] mx-auto mt-[calc(4rem+theme(space.32))] px-4 sm:px-6 lg:px-8"
+      className="w-full max-w-[60rem] mx-auto mt-[calc(4rem+theme(space.24))] px-4 sm:px-6 lg:px-8"
     >
-      <div className="absolute top-4 right-4 hidden sm:block">
-        <LastFm />
-      </div>
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border">
         <CardContent className="p-8">
           <motion.div
@@ -90,9 +87,13 @@ export default function HomeCard() {
 
             <Clock />
 
+            <CoffeeButton />
+
             <AboutSection />
 
-            <WorkInProgress />
+            <div className="hidden sm:block mb-4">
+              <LastFm />
+            </div>
           </motion.div>
         </CardContent>
       </Card>

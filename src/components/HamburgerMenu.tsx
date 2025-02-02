@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const menuVariants = {
   open: { opacity: 1, x: 0 },
-  closed: { opacity: 0, x: "100%" },
+  closed: { opacity: 0, x: " 100%" },
 };
 
 export default function HamburgerMenu() {
