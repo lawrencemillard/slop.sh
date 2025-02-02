@@ -33,7 +33,7 @@ export default function Navbar() {
       variants={navbarVariants}
       className="flex justify-center"
     >
-      <nav className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-16 z-50 w-full max-w-4xl fixed top-4 rounded-lg shadow-lg border border-border px-4">
+      <nav className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-4xl fixed top-2 sm:top-4 rounded-lg shadow-lg border border-border px-2 sm:px-4">
         <div className="flex items-center gap-8">
           <motion.div whileHover="hover" variants={linkVariants}>
             <Link
