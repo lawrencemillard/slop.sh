@@ -44,7 +44,10 @@ export default function HamburgerMenu() {
             href={link.href}
             className="py-2 w-full"
             onClick={() => setIsOpen(false)}
-            {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+            {...(link.external && {
+              target: "_blank",
+              rel: "noopener noreferrer",
+            })}
           >
             {link.label}
           </Link>

@@ -66,7 +66,11 @@ export default function Navbar() {
               {links.map(
                 (link) =>
                   !link.external && (
-                    <motion.div key={link.href} whileHover="hover" variants={linkVariants}>
+                    <motion.div
+                      key={link.href}
+                      whileHover="hover"
+                      variants={linkVariants}
+                    >
                       <Link
                         href={link.href}
                         className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
@@ -74,7 +78,7 @@ export default function Navbar() {
                         {link.label}
                       </Link>
                     </motion.div>
-                  )
+                  ),
               )}
             </nav>
           )}

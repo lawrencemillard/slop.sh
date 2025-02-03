@@ -84,7 +84,7 @@ export default function HomeCard() {
             </div>
 
             <SocialLinks />
-            
+
             <Clock />
 
             <CoffeeButton />
