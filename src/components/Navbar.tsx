@@ -16,18 +16,6 @@ const linkVariants = {
   },
 };
 
-const navbarVariants = {
-  hidden: { opacity: 0, y: -20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      delay: 0.3,
-    },
-  },
-};
-
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
 
