@@ -9,8 +9,6 @@ const images = [
   "/mozart/image2.jpg",
   "/mozart/image3.jpg",
   "/mozart/image4.jpg",
-  // "/mozart/image5.jpg", // Removed
-  // "/mozart/image6.jpg", // Removed
   "/mozart/image7.jpg",
   "/mozart/image8.jpg",
   "/mozart/image9.jpg",
@@ -72,9 +70,8 @@ export default function MozartGallery() {
                 <Image
                   src={src}
                   alt={`Image ${index}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
+                  fill
+                  className="rounded-lg object-cover"
                 />
               </motion.div>
             ))}

@@ -17,7 +17,7 @@ export default function Clock() {
 
   return (
     <div className="fixed top-3 right-0 m-4 text-white text-xl font-mono hidden sm:block">
-      {formatTime(time)}
+      {formatTime(time)} UTC
     </div>
   );
 }

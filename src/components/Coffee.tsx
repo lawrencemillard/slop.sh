@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import LogoSvg from "@/assets/bmc-logo.svg";
+import { SiBuymeacoffee } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 
 const buttonVariants = {
@@ -52,9 +53,10 @@ export function CoffeeButton() {
   return (
     <Button
       onClick={handleClick}
-      className="bg-background hover:bg-foreground/5 transition-colors text-foreground border border-border"
+      className="bg-[#FFDD00] hover:bg-[#FFDD00]/90 hover:scale-105 text-primary-foreground font-semibold transition-all flex items-center gap-2 border-none"
     >
-      Buy Me a Coffee
+      <SiBuymeacoffee className="w-5 h-5" />
+      <span className="mt-1.5 text-base">Buy me a coffee</span>
     </Button>
   );
 }

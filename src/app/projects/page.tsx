@@ -112,7 +112,7 @@ export default function ProjectsPage() {
         variants={containerVariants}
         exit={{ opacity: 0 }}
       >
-        <main className="flex-1 container mx-auto mt-48">
+        <main className="flex-1 container mx-auto mt-48 max-w-[60rem]">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             initial="hidden"

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { links } from "@/lib/links";
 
 const menuVariants = {
   open: { opacity: 1, x: 0 },
@@ -37,28 +38,17 @@ export default function HamburgerMenu() {
         variants={menuVariants}
         className="absolute top-14 -right-6 w-full bg-background/50 backdrop-blur-sm text-foreground flex flex-col items-start pr-16 pl-4 py-2 shadow-lg border border-border rounded-lg transform"
       >
-        <Link href="/" className="py-2 w-full" onClick={() => setIsOpen(false)}>
-          Home
-        </Link>
-        <Link
-          href="/projects"
-          className="py-2 w-full"
-          onClick={() => setIsOpen(false)}
-        >
-          Projects
-        </Link>
-        {/* <Link href="/blog" className="py-2 w-full" onClick={() => setIsOpen(false)}>
-          Blog
-        </Link> */}
-        <Link
-          href="https://github.com/keirim"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="py-2 w-full"
-          onClick={() => setIsOpen(false)}
-        >
-          GitHub
-        </Link>
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="py-2 w-full"
+            onClick={() => setIsOpen(false)}
+            {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+          >
+            {link.label}
+          </Link>
+        ))}
       </motion.div>
     </div>
   );

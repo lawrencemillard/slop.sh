@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import HamburgerMenu from "./HamburgerMenu";
+import { links } from "@/lib/links";
 
 const linkVariants = {
   hover: {
@@ -45,9 +46,9 @@ export default function Navbar() {
 
   return (
     <motion.div
-      initial="hidden"
-      animate="show"
-      variants={navbarVariants}
+      // initial="hidden"
+      // animate="show"
+      // variants={navbarVariants}
       className="flex justify-center"
     >
       <nav className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-4xl fixed top-2 sm:top-4 rounded-lg shadow-lg border border-border px-2 sm:px-4">
@@ -62,22 +63,19 @@ export default function Navbar() {
           </motion.div>
           {!isMobile && (
             <nav className="hidden md:flex gap-6">
-              <motion.div whileHover="hover" variants={linkVariants}>
-                <Link
-                  href="/projects"
-                  className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
-                >
-                  Projects
-                </Link>
-              </motion.div>
-              {/* <motion.div whileHover="hover" variants={linkVariants}>
-                <Link
-                  href="/blog"
-                  className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
-                >
-                  Blog
-                </Link>
-              </motion.div> */}
+              {links.map(
+                (link) =>
+                  !link.external && (
+                    <motion.div key={link.href} whileHover="hover" variants={linkVariants}>
+                      <Link
+                        href={link.href}
+                        className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
+                  )
+              )}
             </nav>
           )}
         </div>
@@ -93,14 +91,19 @@ export default function Navbar() {
               variants={linkVariants}
               className="hidden md:block"
             >
-              <Link
-                href="https://github.com/keirim"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
-              >
-                GitHub
-              </Link>
+              {links
+                .filter((link) => link.external)
+                .map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
             </motion.div>
           )}
         </div>

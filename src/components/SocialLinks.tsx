@@ -7,6 +7,7 @@ import {
   FaLastfm,
   FaRegEnvelope,
 } from "react-icons/fa6";
+import { SiBuymeacoffee } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -33,6 +34,11 @@ const socialLinks = [
     icon: FaLastfm,
     href: "https://www.last.fm/user/Kuuichi2",
     label: "Last.fm",
+  },
+  {
+    icon: SiBuymeacoffee,
+    href: "https://www.buymeacoffee.com/keiran",
+    label: "Buy me a coffee",
   },
   { icon: FaRegEnvelope, href: "mailto:hi@slop.sh", label: "Email" },
 ];
