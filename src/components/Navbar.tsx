@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import HamburgerMenu from "./HamburgerMenu";
+import HamburgerMenu from "@/components/HamburgerMenu";
 import { links } from "@/lib/links";
 
 const linkVariants = {
@@ -33,12 +33,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <motion.div
-      // initial="hidden"
-      // animate="show"
-      // variants={navbarVariants}
-      className="flex justify-center"
-    >
+    <div className="flex justify-center">
       <nav className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-4xl fixed top-2 sm:top-4 rounded-lg shadow-lg border border-border px-2 sm:px-4">
         <div className="flex items-center gap-8">
           <motion.div whileHover="hover" variants={linkVariants}>
@@ -100,6 +95,6 @@ export default function Navbar() {
           )}
         </div>
       </nav>
-    </motion.div>
+    </div>
   );
 }
