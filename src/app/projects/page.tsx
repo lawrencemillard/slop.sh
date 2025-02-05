@@ -106,13 +106,13 @@ export default function ProjectsPage() {
     <>
       <Navbar />
       <motion.div
-        className="min-h-screen flex flex-col"
+        className="min-h-screen flex flex-col max-w-[60rem] w-full mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-full"
         initial="hidden"
         animate="show"
         variants={containerVariants}
         exit={{ opacity: 0 }}
       >
-        <main className="flex-1 container mx-auto mt-48 max-w-[60rem]">
+        <main className="flex-1 container mx-auto mt-48">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             initial="hidden"

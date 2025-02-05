@@ -44,8 +44,9 @@ export default function MozartGallery() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 }}
+      className="max-w-[60rem] w-full mx-auto mt-16 px-4 sm:px-6 lg:px-8"
     >
-      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border max-w-4xl mx-auto border-border mt-16">
+      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border mx-auto border-border mt-16">
         <CardContent className="p-8">
           <motion.h1
             className="text-4xl font-bold text-center mb-8"
