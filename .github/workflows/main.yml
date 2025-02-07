@@ -1,4 +1,4 @@
-name: CI Workflow
+name: Sigma CI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build-and-test:
+  rizz:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,8 +22,8 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Format Code
+      - name: Prettier my beloved
         run: pnpm format
 
-      - name: Lint Code
+      - name: Please dont fail
         run: pnpm lint
