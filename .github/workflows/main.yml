@@ -20,14 +20,14 @@ jobs:
           node-version: '22'
           cache: 'pnpm'
           
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Enable Corepack and Install pnpm
+        run: corepack enable && corepack prepare pnpm@latest --activate
 
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Prettier Formatting
+      - name: Format Code
         run: pnpm format
 
-      - name: Linting
+      - name: Lint Code
         run: pnpm lint
