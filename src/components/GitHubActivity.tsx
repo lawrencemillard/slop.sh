@@ -36,13 +36,13 @@ export default function GitHubActivity() {
             className="space-y-6"
           >
             <GitHubCalendar
-              username="keirim"
+              username="q4ow"
               colorScheme="dark"
               hideColorLegend
             />
             <p className="text-sm text-muted-foreground">
               <a
-                href="https://github.com/keirim"
+                href="https://github.com/q4ow"
                 target="_blank"
                 rel="noopener noreferrer"
               >
