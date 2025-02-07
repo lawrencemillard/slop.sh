@@ -13,7 +13,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/keirim", label: "GitHub" },
+  { icon: FaGithub, href: "https://github.com/q4ow", label: "GitHub" },
   { icon: FaTwitter, href: "https://twitter.com/_keirandev", label: "Twitter" },
   {
     icon: FaDiscord,
