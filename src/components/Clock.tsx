@@ -16,7 +16,7 @@ export default function Clock() {
   };
 
   return (
-    <div className="fixed top-3 right-0 m-4 mr-8 text-white text-2xl font-mono hidden sm:block">
+    <div className="fixed top-3 right-0 m-4 mr-8 text-primary text-2xl font-mono hidden sm:block">
       {formatTime(time)} UTC
     </div>
   );

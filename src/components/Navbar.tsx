@@ -3,8 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import { links } from "@/lib/links";
+import { Button } from "@/components/ui/button";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 const linkVariants = {
   hover: {
@@ -18,6 +21,7 @@ const linkVariants = {
 
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,7 +38,12 @@ export default function Navbar() {
 
   return (
     <div className="flex justify-center">
-      <nav className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-4xl fixed top-2 sm:top-4 rounded-lg shadow-lg border border-border px-2 sm:px-4">
+      <motion.nav
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-4xl fixed top-2 sm:top-4 rounded-lg shadow-lg border border-border px-2 sm:px-4"
+      >
         <div className="flex items-center gap-8">
           <motion.div whileHover="hover" variants={linkVariants}>
             <Link
@@ -66,12 +75,15 @@ export default function Navbar() {
             </nav>
           )}
         </div>
-        <div className="flex items-center gap-8">
-          {isMobile && (
-            <div className="flex-grow flex justify-center mr-4 mt-1.5">
-              <HamburgerMenu />
-            </div>
-          )}
+        <div className="flex items-center gap-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            {theme === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}
+          </Button>
+          {isMobile && <HamburgerMenu />}
           {!isMobile && (
             <motion.div
               whileHover="hover"
@@ -94,7 +106,7 @@ export default function Navbar() {
             </motion.div>
           )}
         </div>
-      </nav>
+      </motion.nav>
     </div>
   );
 }

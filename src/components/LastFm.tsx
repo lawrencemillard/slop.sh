@@ -21,29 +21,40 @@ export default function LastFm() {
     return null;
   }
 
+  if (!lastFM.song) {
+    return null;
+  }
+
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.6 }}
+      className="w-full max-w-96"
+    >
       <Card className="bg-card">
         <CardContent className="p-6 flex flex-col sm:flex-row items-center h-24">
           <Image
             src={lastFM.song.art}
-            height={60}
-            width={60}
+            height={64}
+            width={64}
             alt="Album art for track"
-            className="sm:mb-0 sm:mr-4 rounded-sm border border-border"
+            className="sm:mb-0 sm:mr-4 -ml-2 rounded-sm"
           />
           <div>
             <h3 className="text-lg font-semibold">Now listening to</h3>
+            <div className="h-0.5 bg-border w-full max-w-[7.8rem]" />
             <a
               href={lastFM.song.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-primary text-lg hover:underline"
             >
               {lastFM.song.name.split(/[\(\-]/)[0].trim()}
             </a>
             <span className="text-muted-foreground">
-              {} by {lastFM.song.artist}
+              {} by{" "}
+              <span className="text-primary text-lg">{lastFM.song.artist}</span>
             </span>
           </div>
         </CardContent>

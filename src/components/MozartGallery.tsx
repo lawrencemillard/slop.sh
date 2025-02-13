@@ -22,57 +22,54 @@ const images = [
 ];
 
 const containerVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
+      duration: 0.5,
       staggerChildren: 0.1,
-      delay: 1,
     },
   },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, scale: 0.8 },
-  show: { opacity: 1, scale: 1 },
+  visible: { opacity: 1, scale: 1 },
 };
 
 export default function MozartGallery() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5 }}
-      className="max-w-[60rem] w-full mx-auto mt-16 px-4 sm:px-6 lg:px-8"
+      initial="hidden"
+      whileInView="visible"
+      variants={containerVariants}
+      viewport={{ once: true, amount: 0.2 }}
+      className="w-full max-w-4xl mx-auto"
     >
-      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border mx-auto border-border mt-16">
+      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
         <CardContent className="p-8">
           <motion.h1
             className="text-4xl font-bold text-center mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
+            variants={itemVariants}
           >
             Mozart Gallery
           </motion.h1>
           <motion.div
-            initial="hidden"
-            animate="show"
             variants={containerVariants}
-            className="grid grid-cols-3 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
           >
             {images.map((src, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="relative w-full h-32"
+                className="relative w-full pt-[100%] overflow-hidden rounded-lg"
               >
                 <Image
-                  src={src}
+                  src={src || "/placeholder.svg"}
                   alt={`Image ${index}`}
                   fill
-                  className="rounded-lg object-cover"
+                  className="rounded-lg object-cover mozart-image"
                 />
               </motion.div>
             ))}

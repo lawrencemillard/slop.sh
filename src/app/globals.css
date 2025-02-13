@@ -13,6 +13,35 @@ body {
   font-family: "League Spartan", sans-serif;
 }
 
+.mozart-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.mozart-image:hover {
+  transform: scale(1.05);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f3460;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e94560;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff6b6b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

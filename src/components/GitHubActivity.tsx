@@ -3,52 +3,45 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import GitHubCalendar from "react-github-calendar";
+import { FiGithub } from "react-icons/fi";
+import { useTheme } from "next-themes";
 
 const containerVariants = {
-  hidden: { opacity: 0, y: 100 },
-  show: {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.5,
-      delay: 0.5,
     },
   },
 };
 
 export default function GitHubActivity() {
+  const { theme } = useTheme();
+  const colorScheme = theme === "dark" ? "dark" : "light";
+
   return (
     <motion.div
       initial="hidden"
-      animate="show"
+      whileInView="visible"
       variants={containerVariants}
-      className="w-full max-w-[60rem] mx-auto mt-16 px-4 sm:px-6 lg:px-8"
+      viewport={{ once: true, amount: 0.2 }}
+      className="w-full max-w-4xl mx-auto"
     >
-      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border">
-        <div className="pl-8 pt-8">
+      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
+        <div className="pl-8 pt-8 flex items-center">
+          <FiGithub className="w-6 h-6 mr-2" />
           <h2 className="text-xl font-semibold">GitHub Activity</h2>
         </div>
-        <CardContent className="p-8">
-          <motion.div
-            initial="hidden"
-            animate="show"
-            variants={containerVariants}
-            className="space-y-6"
-          >
+        <CardContent className="pl-8 pt-4">
+          <motion.div className="space-y-4">
             <GitHubCalendar
               username="q4ow"
-              colorScheme="dark"
+              colorScheme={colorScheme}
               hideColorLegend
+              hideMonthLabels
             />
-            <p className="text-sm text-muted-foreground">
-              <a
-                href="https://github.com/q4ow"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View my GitHub profile
-              </a>
-            </p>
           </motion.div>
         </CardContent>
       </Card>
