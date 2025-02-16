@@ -10,9 +10,9 @@ export default function AboutSection() {
     >
       <h2 className="text-2xl font-semibold">About</h2>
       <p className="text-muted-foreground leading-relaxed">
-        I&apos;m a full-stack developer passionate about building tools and
-        experiences that make a difference. This site serves as a hub for my
-        various projects and experiments in web development, software
+        I&apos;m a full-stack developer from the UK and I just write 
+        stuff for fun. This site serves as a hub for my various projects 
+        and experiments in web development, software
         development and other topics that interest me. I have been learning how
         to develop software for the past 2 years or so, and have recently began
         to take web development more seriously in the last 2 months or so. I am
