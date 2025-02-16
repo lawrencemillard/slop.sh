@@ -21,7 +21,7 @@ export default function LastFm() {
     return null;
   }
 
-  if (!lastFM.song) {
+  if (!lastFM.song.art) {
     return null;
   }
 
