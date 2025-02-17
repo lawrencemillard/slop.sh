@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/sky",
-        destination: "https://cupcake.shiiyu.moe/stats/q_ez/Pomegranate",
+        destination: "https://sky.shiiyu.moe/stats/q_ez/Pomegranate",
         permanent: true,
       },
       {
