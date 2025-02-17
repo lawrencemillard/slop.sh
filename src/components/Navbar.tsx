@@ -73,19 +73,17 @@ export default function Navbar() {
           {isMobile && <HamburgerMenu />}
           {!isMobile && (
             <div className="hidden md:block">
-              {Links
-                .filter((link) => link.external)
-                .map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    target={link.href !== "/projects" ? "_blank" : "_self"}
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 pt-3 pb-2 rounded transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+              {Links.filter((link) => link.external).map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  target={link.href !== "/projects" ? "_blank" : "_self"}
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 pt-3 pb-2 rounded transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           )}
         </div>
