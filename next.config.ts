@@ -9,8 +9,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/sky",
+        destination: "https://cupcake.shiiyu.moe/stats/q_ez/Pomegranate",
+        permanent: true,
+      },
+      {
         source: "/github",
-        destination: "https://github.com/keirim",
+        destination: "https://github.com/q4ow",
         permanent: true,
       },
     ];

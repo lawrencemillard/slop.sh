@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { links } from "@/lib/links";
+import { Links } from "@/lib/links";
 
 const menuVariants = {
   open: { opacity: 1, x: 0 },
@@ -38,7 +38,7 @@ export default function HamburgerMenu() {
         variants={menuVariants}
         className="absolute top-14 -right-6 w-full bg-background/50 backdrop-blur-sm text-foreground flex flex-col items-start pr-16 pl-4 py-2 shadow-lg border border-border rounded-lg transform"
       >
-        {links.map((link) => (
+        {Links.map((link) => (
           <Link
             key={link.href}
             href={link.href}

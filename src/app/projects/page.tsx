@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLink } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import { Projects } from "@/lib/projects";
 import {
   Card,
   CardContent,
@@ -14,17 +15,6 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  githubUrl: string;
-  demoUrl?: string;
-  tags: string[];
-  status: "completed" | "in-progress" | "planned";
-}
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -40,66 +30,6 @@ const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 },
 };
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "slop.sh",
-    description: "My personal website built with Next.js and TailwindCSS",
-    image: "https://r2.slop.sh/wdrwxfpj.png",
-    githubUrl: "https://github.com/q4ow/slop.sh",
-    demoUrl: "https://slop.sh",
-    tags: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion", "Git"],
-    status: "in-progress",
-  },
-  {
-    id: 2,
-    title: "AnonHost",
-    description: "A simple file hosting service with anonymous uploads",
-    image: "https://r2.slop.sh/anonhost.png",
-    githubUrl: "https://github.com/q4ow/keiran.cc",
-    tags: ["React", "NextJS", "Prisma", "PostgreSQL", "TailwindCSS"],
-    status: "completed",
-  },
-  {
-    id: 3,
-    title: "E-Z Docs",
-    description: "Community driven documentation for E-Z Services",
-    image: "https://r2.slop.sh/e-zdocs.png",
-    githubUrl: "https://github.com/q4ow/ez-docs",
-    demoUrl: "https://e-z.software",
-    tags: ["React", "NextJS", "TailwindCSS", "Git", "Framer Motion"],
-    status: "in-progress",
-  },
-  {
-    id: 4,
-    title: "AnonLink",
-    description: "A simple, private link shortening service",
-    image: "https://r2.slop.sh/anonlink.png",
-    githubUrl: "https://github.com/q4ow/anonlink",
-    demoUrl: "https://anon.love",
-    tags: ["React", "NextJS", "TailwindCSS", "SQLite", "Caddy"],
-    status: "completed",
-  },
-  {
-    id: 5,
-    title: "KeiranHost",
-    description: "A simple file hosting service, predecessor to AnonHost",
-    image: "https://r2.slop.sh/keiranhost.png",
-    githubUrl: "https://github.com/q4ow/keiranhost",
-    tags: ["React", "NextJS", "Prisma", "PostgreSQL", "TailwindCSS"],
-    status: "completed",
-  },
-  {
-    id: 6,
-    title: "keiran.live",
-    description: "My personal portfolio built with Go and NextJS",
-    image: "https://r2.slop.sh/keiranlive.png",
-    githubUrl: "https://github.com/q4ow/keiran.live",
-    tags: ["React", "NextJS", "Go", "TailwindCSS", "Framer Motion"],
-    status: "completed",
-  },
-];
 
 export default function ProjectsPage() {
   return (
@@ -119,7 +49,7 @@ export default function ProjectsPage() {
             animate="show"
             variants={containerVariants}
           >
-            {projects.map((project) => (
+            {Projects.map((project) => (
               <motion.div key={project.id} variants={itemVariants}>
                 <Card className="flex flex-col">
                   <div className="relative h-48 w-full">

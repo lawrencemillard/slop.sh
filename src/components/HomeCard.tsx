@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import LastFm from "@/components/LastFm";
-import SocialLinks from "@/components/SocialLinks";
+import Socials from "@/components/Socials";
 import AboutSection from "@/components/AboutSection";
 import TypewriterComponent from "typewriter-effect";
 import Clock from "@/components/Clock";
@@ -82,7 +82,7 @@ export default function HomeCard() {
 
             <Clock />
             <AboutSection />
-            <SocialLinks />
+            <Socials />
             <CoffeeButton />
             <LastFm />
             <div className="h-0.5 w-full bg-border" />

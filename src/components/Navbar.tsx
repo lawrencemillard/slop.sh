@@ -5,19 +5,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import HamburgerMenu from "@/components/HamburgerMenu";
-import { links } from "@/lib/links";
+import { Links } from "@/lib/links";
 import { Button } from "@/components/ui/button";
 import { FiMoon, FiSun } from "react-icons/fi";
-
-const linkVariants = {
-  hover: {
-    scale: 1.1,
-    transition: {
-      ease: "easeOut",
-      duration: 0.2,
-    },
-  },
-};
 
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -45,31 +35,27 @@ export default function Navbar() {
         className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-4xl fixed top-2 sm:top-4 rounded-lg shadow-lg border border-border px-2 sm:px-4"
       >
         <div className="flex items-center gap-8">
-          <motion.div whileHover="hover" variants={linkVariants}>
-            <Link
-              href="/"
-              className="text-2xl font-bold hover:text-primary/80 ml-4 transition-colors"
-            >
-              slop.sh
-            </Link>
-          </motion.div>
+          <Link
+            href="/"
+            className="text-2xl font-bold hover:text-primary/80 ml-4 transition-colors"
+          >
+            slop.sh
+          </Link>
           {!isMobile && (
             <nav className="hidden md:flex gap-6">
-              {links.map(
+              {Links.map(
                 (link) =>
                   !link.external && (
-                    <motion.div
-                      key={link.href}
-                      whileHover="hover"
-                      variants={linkVariants}
-                    >
+                    <div key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
+                        className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 pt-3 pb-2 rounded transition-colors"
+                        target={link.href !== "/projects" ? "_blank" : "_self"}
+                        rel="noopener noreferrer"
                       >
                         {link.label}
                       </Link>
-                    </motion.div>
+                    </div>
                   ),
               )}
             </nav>
@@ -80,30 +66,27 @@ export default function Navbar() {
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="text-muted-foreground hover:text-foreground"
           >
             {theme === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}
           </Button>
           {isMobile && <HamburgerMenu />}
           {!isMobile && (
-            <motion.div
-              whileHover="hover"
-              variants={linkVariants}
-              className="hidden md:block"
-            >
-              {links
+            <div className="hidden md:block">
+              {Links
                 .filter((link) => link.external)
                 .map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    target="_blank"
+                    target={link.href !== "/projects" ? "_blank" : "_self"}
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 py-2 rounded transition-colors"
+                    className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 pt-3 pb-2 rounded transition-colors"
                   >
                     {link.label}
                   </Link>
                 ))}
-            </motion.div>
+            </div>
           )}
         </div>
       </motion.nav>

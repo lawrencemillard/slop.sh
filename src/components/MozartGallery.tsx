@@ -3,23 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-
-const images = [
-  "/mozart/image1.jpg",
-  "/mozart/image2.jpg",
-  "/mozart/image3.jpg",
-  "/mozart/image4.jpg",
-  "/mozart/image7.jpg",
-  "/mozart/image8.jpg",
-  "/mozart/image9.jpg",
-  "/mozart/image10.jpg",
-  "/mozart/image11.jpg",
-  "/mozart/image12.jpg",
-  "/mozart/image13.jpg",
-  "/mozart/image14.jpg",
-  "/mozart/image15.jpg",
-  "/mozart/image16.jpg",
-];
+import { Images } from "@/lib/links";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -59,7 +43,7 @@ export default function MozartGallery() {
             variants={containerVariants}
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
           >
-            {images.map((src, index) => (
+            {Images.map((src, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}

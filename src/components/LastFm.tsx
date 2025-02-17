@@ -38,8 +38,8 @@ export default function LastFm() {
             src={lastFM.song.art}
             height={64}
             width={64}
-            alt="Album art for track"
-            className="sm:mb-0 sm:mr-4 -ml-2 rounded-sm"
+            alt="Album Art"
+            className="sm:mb-0 sm:mr-4 -ml-2 rounded-sm hidden sm:block"
           />
           <div>
             <h3 className="text-lg font-semibold">Now listening to</h3>
