@@ -65,14 +65,12 @@ export default function HomeCard() {
                 {showTypewriter && (
                   <TypewriterComponent
                     options={{
-                      delay: 50,
+                      delay: 30,
                       strings: [
                         "I'm a 15 year old developer from the UK",
-                        "I build things for fun",
-                        "Passionate about web development",
                       ],
-                      loop: true,
-                      deleteSpeed: 20,
+                      loop: false,
+                      deleteSpeed: 9999999999999999,
                       autoStart: true,
                     }}
                   />
