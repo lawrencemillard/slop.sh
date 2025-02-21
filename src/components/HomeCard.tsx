@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import LastFm from "@/components/LastFm";
 import Socials from "@/components/Socials";
@@ -66,9 +66,7 @@ export default function HomeCard() {
                   <TypewriterComponent
                     options={{
                       delay: 30,
-                      strings: [
-                        "I'm a 15 year old developer from the UK",
-                      ],
+                      strings: ["I'm a 15 year old developer from the UK"],
                       loop: false,
                       deleteSpeed: 9999999999999999,
                       autoStart: true,
@@ -78,13 +76,24 @@ export default function HomeCard() {
               </motion.p>
             </div>
 
-            <Clock />
+            {/* <Clock /> */}
             <AboutSection />
             <Socials />
             <CoffeeButton />
             <LastFm />
-            <div className="h-0.5 w-full bg-border" />
-            <WorkInProgress />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="h-0.5 w-full bg-border"
+            />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+            >
+              <WorkInProgress />
+            </motion.div>
           </motion.div>
         </CardContent>
       </Card>
