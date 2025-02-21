@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import LastFm from "@/components/LastFm";
 import Socials from "@/components/Socials";
 import AboutSection from "@/components/AboutSection";
 import TypewriterComponent from "typewriter-effect";
-import Clock from "@/components/Clock";
+// import Clock from "@/components/Clock";
 import { CoffeeButton } from "@/components/Coffee";
 import WorkInProgress from "@/components/WorkInProgress";
 
