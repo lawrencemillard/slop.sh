@@ -114,6 +114,8 @@ const ProjectCard = memo(({ project }) => (
   </motion.div>
 ));
 
+ProjectCard.displayName = "ProjectCard";
+
 export default function ProjectsPage() {
   return (
     <>
