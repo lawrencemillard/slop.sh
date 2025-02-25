@@ -7,7 +7,6 @@ import LastFm from "@/components/LastFm";
 import Socials from "@/components/Socials";
 import AboutSection from "@/components/AboutSection";
 import TypewriterComponent from "typewriter-effect";
-// import Clock from "@/components/Clock";
 import { CoffeeButton } from "@/components/Coffee";
 import WorkInProgress from "@/components/WorkInProgress";
 
@@ -75,8 +74,6 @@ export default function HomeCard() {
                 )}
               </motion.p>
             </div>
-
-            {/* <Clock /> */}
             <AboutSection />
             <Socials />
             <CoffeeButton />
