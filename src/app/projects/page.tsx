@@ -35,7 +35,7 @@ const itemVariants = {
 };
 
 type Project = {
-  id: string;
+  id: number;
   image: string;
   title: string;
   status: string;
