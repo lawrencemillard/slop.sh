@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { SocialLinks } from "@/lib/links";
+import { useMediaQuery } from "react-responsive";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -21,6 +22,9 @@ const itemVariants = {
 };
 
 export default function Socials() {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const linksToShow = isMobile ? SocialLinks.slice(0, 6) : SocialLinks;
+
   return (
     <motion.div
       initial="hidden"
@@ -28,7 +32,7 @@ export default function Socials() {
       variants={containerVariants}
       className="flex gap-3"
     >
-      {SocialLinks.map(({ icon: Icon, href, label }) => (
+      {linksToShow.map(({ icon: Icon, href, label }) => (
         <motion.div key={label} variants={itemVariants}>
           <Button
             variant="outline"

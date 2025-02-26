@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Links } from "@/lib/links";
+import { Button } from "@/components/ui/button";
 
 const menuVariants = {
   open: { opacity: 1, x: 0 },
@@ -13,12 +14,14 @@ export default function HamburgerMenu() {
 
   return (
     <div className="relative w-full">
-      <button
+      <Button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-foreground focus:outline-none"
+        variant="ghost"
+        size="icon"
+        className="text-muted-foreground hover:text-foreground focus:outline-none"
       >
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -31,7 +34,7 @@ export default function HamburgerMenu() {
             d="M4 6h16M4 12h16m-7 6h7"
           ></path>
         </svg>
-      </button>
+      </Button>
       <motion.div
         initial="closed"
         animate={isOpen ? "open" : "closed"}

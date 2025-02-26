@@ -8,7 +8,7 @@ import Socials from "@/components/Socials";
 import AboutSection from "@/components/AboutSection";
 import TypewriterComponent from "typewriter-effect";
 import { CoffeeButton } from "@/components/Coffee";
-import WorkInProgress from "@/components/WorkInProgress";
+// import WorkInProgress from "@/components/WorkInProgress";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 100 },
@@ -78,7 +78,7 @@ export default function HomeCard() {
             <Socials />
             <CoffeeButton />
             <LastFm />
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
@@ -90,7 +90,7 @@ export default function HomeCard() {
               transition={{ delay: 0.9 }}
             >
               <WorkInProgress />
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </CardContent>
       </Card>
