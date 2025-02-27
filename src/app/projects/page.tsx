@@ -46,7 +46,13 @@ type Project = {
 };
 
 const ProjectCard = memo(({ project }: { project: Project }) => (
-  <motion.div key={project.id} variants={itemVariants}>
+  <motion.div
+    key={project.id}
+    variants={itemVariants}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+  >
     <Card className="flex flex-col">
       <div className="relative h-48 w-full">
         <Image

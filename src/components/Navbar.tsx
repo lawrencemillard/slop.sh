@@ -31,6 +31,7 @@ export default function Navbar() {
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
         className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-4xl fixed top-2 sm:top-4 rounded-lg shadow-md border border-border px-4"
       >
@@ -46,7 +47,12 @@ export default function Navbar() {
               {Links.map(
                 (link) =>
                   !link.external && (
-                    <div key={link.href}>
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
                       <Link
                         href={link.href}
                         className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 pt-3 pb-2 rounded transition-colors"
@@ -55,7 +61,7 @@ export default function Navbar() {
                       >
                         {link.label}
                       </Link>
-                    </div>
+                    </motion.div>
                   ),
               )}
             </nav>
@@ -74,15 +80,21 @@ export default function Navbar() {
           {!isMobile && (
             <div className="hidden md:block">
               {Links.filter((link) => link.external).map((link) => (
-                <Link
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  target={link.href !== "/projects" ? "_blank" : "_self"}
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 pt-3 pb-2 rounded transition-colors"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                 >
-                  {link.label}
-                </Link>
+                  <Link
+                    href={link.href}
+                    target={link.href !== "/projects" ? "_blank" : "_self"}
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 pt-3 pb-2 rounded transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           )}

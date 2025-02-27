@@ -35,7 +35,8 @@ export default function HomeCard() {
   return (
     <motion.div
       initial="hidden"
-      whileInView="visible"
+      animate="visible"
+      exit="hidden"
       variants={containerVariants}
       viewport={{ once: true, amount: 0.2 }}
       className="w-full max-w-4xl mx-auto"
@@ -43,10 +44,17 @@ export default function HomeCard() {
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
         <CardContent className="p-8">
           <motion.div className="space-y-8">
-            <div className="space-y-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 0.2 }}
+              className="space-y-2"
+            >
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
                 transition={{ delay: 0.2 }}
                 className="text-4xl font-bold tracking-tight"
               >
@@ -58,6 +66,7 @@ export default function HomeCard() {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
                 transition={{ delay: 0.4 }}
                 className="text-lg text-muted-foreground font-semibold"
               >
@@ -73,21 +82,51 @@ export default function HomeCard() {
                   />
                 )}
               </motion.p>
-            </div>
-            <AboutSection />
-            <Socials />
-            <CoffeeButton />
-            <LastFm />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 0.6 }}
+            >
+              <AboutSection />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 0.8 }}
+            >
+              <Socials />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 1.0 }}
+            >
+              <CoffeeButton />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 1.2 }}
+            >
+              <LastFm />
+            </motion.div>
             {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 1.4 }}
               className="h-0.5 w-full bg-border"
             />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 1.6 }}
             >
               <WorkInProgress />
             </motion.div> */}

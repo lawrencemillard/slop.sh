@@ -7,6 +7,7 @@ import GitHubActivity from "@/components/GitHubActivity";
 import MozartGallery from "@/components/MozartGallery";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useMediaQuery } from "react-responsive";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function HomeClient() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -17,13 +18,13 @@ export default function HomeClient() {
         <ScrollArea className="h-screen">
           <Navbar />
           <main className="container mx-auto px-4 space-y-24 py-40">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <HomeCard />
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <GitHubActivity />
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <MozartGallery />
             </Suspense>
           </main>
@@ -32,13 +33,13 @@ export default function HomeClient() {
         <>
           <Navbar />
           <main className="container mx-auto px-4 space-y-24 py-40">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <HomeCard />
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <GitHubActivity />
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <MozartGallery />
             </Suspense>
           </main>
