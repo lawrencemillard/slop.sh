@@ -4,7 +4,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import GridPattern from "@/components/ui/grid-pattern";
 import "./globals.css";
 import type React from "react";
-import { motion } from "framer-motion";
 
 export const metadata: Metadata = {
   title: "slop.sh",
@@ -62,13 +61,7 @@ export default function RootLayout({
             width={50}
             style={{ opacity: 0.1 }}
           />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            {children}
-          </motion.div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

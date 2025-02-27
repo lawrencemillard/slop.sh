@@ -158,3 +158,12 @@ button:hover {
 .mozart-image:hover {
   animation: imageHover 0.3s ease-in-out;
 }
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
