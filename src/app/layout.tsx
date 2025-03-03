@@ -54,7 +54,7 @@ export default function RootLayout({
         <meta property="og:image:alt" content="slop" />
       </Head>
       <body suppressHydrationWarning={true}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <GridPattern
             className="fixed inset-0 text-primary/10 z-0"
             height={50}

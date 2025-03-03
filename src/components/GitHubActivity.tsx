@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import GitHubCalendar from "react-github-calendar";
 import { FiGithub } from "react-icons/fi";
-import { useTheme } from "next-themes";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -18,9 +17,6 @@ const containerVariants = {
 };
 
 export default function GitHubActivity() {
-  const { theme } = useTheme();
-  const colorScheme = theme === "dark" ? "dark" : "light";
-
   return (
     <motion.div
       initial="hidden"
@@ -38,7 +34,7 @@ export default function GitHubActivity() {
           <motion.div className="space-y-4">
             <GitHubCalendar
               username="q4ow"
-              colorScheme={colorScheme}
+              colorScheme={"dark"}
               hideColorLegend
               hideMonthLabels
             />
