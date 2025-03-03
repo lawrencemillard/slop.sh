@@ -59,18 +59,18 @@ export default function LastFm() {
             <div>
               <p className="text-lg font-semibold">Now listening to</p>
               <a
-                href={lastFM.song.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary text-lg hover:underline"
+              href={lastFM.song.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary text-lg hover:underline line-clamp-1"
               >
-                {lastFM.song.name.split(/[\(\-]/)[0].trim()}
+              {lastFM.song.name.split(/[\(\-]/)[0].trim()}
               </a>
               <span className="text-muted-foreground">
-                by{" "}
-                <span className="text-primary text-lg">
-                  {lastFM.song.artist}
-                </span>
+              {" by "}
+              <span className="text-primary text-lg">
+                {lastFM.song.artist}
+              </span>
               </span>
             </div>
           </CardContent>
