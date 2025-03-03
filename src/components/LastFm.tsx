@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,6 +13,19 @@ const LASTFM_USERNAME = process.env.NEXT_PUBLIC_LASTFM_USERNAME;
 
 export default function LastFm() {
   const lastFM = useLastFM(LASTFM_USERNAME || "", LASTFM_API_KEY || "");
+  const [showComponent, setShowComponent] = useState(true);
+
+  useEffect(() => {
+    if (!lastFM.status || lastFM.status !== "playing") {
+      const timer = setTimeout(() => {
+        setShowComponent(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    } else {
+      setShowComponent(true);
+    }
+  }, [lastFM.status]);
 
   if (!LASTFM_API_KEY || !LASTFM_USERNAME) {
     console.error("Last.fm API key or username not set");
@@ -20,6 +34,10 @@ export default function LastFm() {
 
   const isPlaying =
     lastFM.status === "playing" && lastFM.song && lastFM.song.art;
+
+  if (!showComponent) {
+    return null;
+  }
 
   return (
     <motion.div
@@ -46,7 +64,7 @@ export default function LastFm() {
                 rel="noopener noreferrer"
                 className="text-primary text-lg hover:underline"
               >
-                {lastFM.song.name.split(/[\(\-]/)[0].trim()} {}
+                {lastFM.song.name.split(/[\(\-]/)[0].trim()}
               </a>
               <span className="text-muted-foreground">
                 by{" "}
