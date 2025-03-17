@@ -3,15 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import { Links } from "@/lib/links";
-import { Button } from "@/components/ui/button";
-import { FiMoon, FiSun } from "react-icons/fi";
 
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleResize = () => {
@@ -68,14 +64,6 @@ export default function Navbar() {
           )}
         </div>
         <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className={`text-muted-foreground hover:text-foreground ${isMobile ? "px-4" : ""}`}
-          >
-            {theme === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}
-          </Button>
           {isMobile && <HamburgerMenu />}
           {!isMobile && (
             <div className="hidden md:block">

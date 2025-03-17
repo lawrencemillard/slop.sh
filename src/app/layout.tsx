@@ -1,13 +1,25 @@
-import Head from "next/head";
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
 import GridPattern from "@/components/ui/grid-pattern";
 import "./globals.css";
-import type React from "react";
+import type { ReactNode } from "react";
+import { Inter, League_Spartan } from "next/font/google";
+
+const leagueSpartan = League_Spartan({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-league-spartan",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: "slop.sh",
-  description: "this site sucks lmao",
+  description: "sloppy slop",
   icons: [
     {
       url: "/favicon.svg",
@@ -19,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://slop.sh",
     title: "slop.sh",
-    description: "this site sucks lmao",
+    description: "sloppy slop",
     images: [
       {
         url: "/meta.png",
@@ -33,36 +45,32 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://slop.sh"),
 };
 
+export const viewport = {
+  themeColor: "#000000",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <Head>
-        <title>slop.sh</title>
-        <meta name="description" content="sloppy slop" />
-        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://slop.sh" />
-        <meta property="og:title" content="slop.sh" />
-        <meta property="og:description" content="sloppy slop" />
-        <meta property="og:image" content="/meta.png" />
-        <meta property="og:image:width" content="900" />
-        <meta property="og:image:height" content="900" />
-        <meta property="og:image:alt" content="slop" />
-      </Head>
-      <body suppressHydrationWarning={true}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <GridPattern
-            className="fixed inset-0 text-primary/10 z-0"
-            height={50}
-            width={50}
-            style={{ opacity: 0.1 }}
-          />
-          {children}
-        </ThemeProvider>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${leagueSpartan.variable} ${inter.variable}`}
+    >
+      <body
+        suppressHydrationWarning={true}
+        className="dark min-h-screen antialiased"
+      >
+        <GridPattern
+          className="fixed inset-0 text-primary/10 z-0 pointer-events-none"
+          height={50}
+          width={50}
+          style={{ opacity: 0.1 }}
+        />
+        <main className="relative z-10">{children}</main>
       </body>
     </html>
   );

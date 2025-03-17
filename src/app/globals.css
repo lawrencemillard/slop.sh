@@ -2,15 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "League Spartan";
-  src: url("/fonts/LeagueSpartan-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
-  font-family: "League Spartan", sans-serif;
+  font-family: var(--font-league-spartan), var(--font-inter), sans-serif;
 }
 
 .mozart-image {

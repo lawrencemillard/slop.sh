@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HomeCard from "@/components/HomeCard";
 import GitHubActivity from "@/components/GitHubActivity";
+import HomeProjects from "@/components/HomeProjects";
 import MozartGallery from "@/components/MozartGallery";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useMediaQuery } from "react-responsive";
@@ -17,12 +18,15 @@ export default function HomeClient() {
       {isDesktop ? (
         <ScrollArea className="h-screen">
           <Navbar />
-          <main className="container mx-auto px-4 space-y-24 py-40">
+          <main className="container mx-auto px-4 space-y-8 py-20">
             <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <HomeCard />
             </Suspense>
             <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <GitHubActivity />
+            </Suspense>
+            <Suspense fallback={<Skeleton className="h-24 w-full" />}>
+              <HomeProjects />
             </Suspense>
             <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <MozartGallery />
@@ -38,6 +42,9 @@ export default function HomeClient() {
             </Suspense>
             <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <GitHubActivity />
+            </Suspense>
+            <Suspense fallback={<Skeleton className="h-24 w-full" />}>
+              <HomeProjects />
             </Suspense>
             <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <MozartGallery />

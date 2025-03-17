@@ -39,7 +39,7 @@ export default function HomeCard() {
       exit="hidden"
       variants={containerVariants}
       viewport={{ once: true, amount: 0.2 }}
-      className="w-full max-w-4xl mx-auto"
+      className="w-full max-w-4xl mx-auto min-h-[50vh] flex items-center justify-center pt-8"
     >
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
         <CardContent className="p-8">

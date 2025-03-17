@@ -60,7 +60,6 @@ const ProjectCard = memo(({ project }: { project: Project }) => (
           alt={project.title}
           fill
           className="rounded-t-lg object-cover transition-all duration-300 grayscale hover:grayscale-0"
-          priority
           loading="lazy"
         />
       </div>
