@@ -37,7 +37,8 @@ export default function LastFm() {
     return null;
   }
 
-  const songToDisplay = lastFM.status === "playing" ? lastFM.song : lastPlayedSongRef.current;
+  const songToDisplay =
+    lastFM.status === "playing" ? lastFM.song : lastPlayedSongRef.current;
 
   return (
     <AnimatePresence>
@@ -67,7 +68,9 @@ export default function LastFm() {
                   transition={{ delay: 0.2 }}
                 >
                   <p className="text-lg font-semibold">
-                    {isCurrentlyPlaying ? "Now listening to" : "Last played song"}
+                    {isCurrentlyPlaying
+                      ? "Now listening to"
+                      : "Last played song"}
                   </p>
                   <a
                     href={songToDisplay.url}

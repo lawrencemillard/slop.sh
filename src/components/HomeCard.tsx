@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import TypewriterComponent from "typewriter-effect";
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import LastFm from "@/components/LastFm";
 import Socials from "@/components/Socials";
 import AboutSection from "@/components/AboutSection";
-import TypewriterComponent from "typewriter-effect";
 import { CoffeeButton } from "@/components/Coffee";
 // import WorkInProgress from "@/components/WorkInProgress";
 
@@ -24,6 +25,23 @@ const containerVariants = {
 
 export default function HomeCard() {
   const [showTypewriter, setShowTypewriter] = useState(false);
+  const calculateAge = (birthDate: Date): number => {
+    const today = new Date();
+    const birth = new Date(birthDate);
+    let age = today.getFullYear() - birth.getFullYear();
+    const monthDiff = today.getMonth() - birth.getMonth();
+
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && today.getDate() < birth.getDate())
+    ) {
+      age--;
+    }
+
+    return age;
+  };
+
+  const myAge = calculateAge(new Date("2009-03-25"));
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -42,6 +60,22 @@ export default function HomeCard() {
       className="w-full max-w-4xl mx-auto min-h-[50vh] flex items-center justify-center pt-8"
     >
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.3,
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="absolute top-9 right-6"
+        >
+          <Avatar className="w-24 h-24 hover:scale-105 transition-transform duration-200">
+            <AvatarImage src="/avatar.png" alt="Keiran" />
+            <AvatarFallback>K</AvatarFallback>
+          </Avatar>
+        </motion.div>
         <CardContent className="p-8">
           <motion.div className="space-y-8">
             <motion.div
@@ -63,7 +97,7 @@ export default function HomeCard() {
                   Keiran
                 </span>
               </motion.h1>
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
@@ -74,14 +108,16 @@ export default function HomeCard() {
                   <TypewriterComponent
                     options={{
                       delay: 30,
-                      strings: ["I'm a 15 year old developer from the UK"],
+                      strings: [
+                        `I'm a ${myAge} year old developer from the UK`,
+                      ],
                       loop: false,
                       deleteSpeed: 9999999999999999,
                       autoStart: true,
                     }}
                   />
                 )}
-              </motion.p>
+              </motion.div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

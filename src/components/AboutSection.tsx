@@ -13,11 +13,9 @@ export default function AboutSection() {
         I&apos;m a full-stack developer from the UK and I just write stuff for
         fun. This site serves as a hub for my various projects and experiments
         in web development, software development and other topics that interest
-        me. I have been learning how to develop software for around the past 2
-        years, and have recently began to take web development more seriously in
-        the last 2 months or so. I am currently working on a few projects
-        primarily in the web development space, and am really happy with the
-        progress I have made so far.
+        me. I have been learning to code since I was around 11 years old, but
+        have only bothered with web development within the last year or so. I
+        live for my girlfriend, she is what motivates me.
       </p>
     </motion.div>
   );

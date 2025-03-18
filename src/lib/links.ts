@@ -30,7 +30,6 @@ export const Images = [
   "/mozart/image14.jpg",
   "/mozart/image15.jpg",
   "/mozart/image16.jpg",
-  "",
 ];
 
 export const SocialLinks = [
