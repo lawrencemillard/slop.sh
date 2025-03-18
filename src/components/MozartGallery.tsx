@@ -50,7 +50,7 @@ export default function MozartGallery() {
                 className="relative w-full pt-[100%] overflow-hidden rounded-lg"
               >
                 <Image
-                  src={src || "/placeholder.svg"}
+                  src={src || "/placedoggo.svg"}
                   alt={`Image ${index}`}
                   fill
                   className="rounded-lg object-cover mozart-image"

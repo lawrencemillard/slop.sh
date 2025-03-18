@@ -14,22 +14,16 @@ const LASTFM_USERNAME = process.env.NEXT_PUBLIC_LASTFM_USERNAME;
 export default function LastFm() {
   const lastFM = useLastFM(LASTFM_USERNAME || "", LASTFM_API_KEY || "");
   const [showComponent, setShowComponent] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const lastPlayedSongRef = useRef<typeof lastFM.song | null>(null);
   const [isCurrentlyPlaying, setIsCurrentlyPlaying] = useState<boolean>(false);
 
   useEffect(() => {
-    if (lastFM.status) {
-      setShowComponent(true);
-    }
+    setShowComponent(true);
 
     if (lastFM.status === "playing" && lastFM.song) {
       lastPlayedSongRef.current = lastFM.song;
       setIsCurrentlyPlaying(true);
-      if (lastPlayedSongRef.current?.art !== lastFM.song.art) {
-        setImageLoaded(false);
-      }
-    } else {
+    } else if (lastFM.status === "idle") {
       setIsCurrentlyPlaying(false);
     }
   }, [lastFM.status, lastFM.song]);
@@ -39,13 +33,11 @@ export default function LastFm() {
     return null;
   }
 
-  const isPlaying =
-    lastFM.status === "playing" && lastFM.song && lastFM.song.art;
-  const songToDisplay = isPlaying ? lastFM.song : lastPlayedSongRef.current;
-
-  if (!showComponent && !lastPlayedSongRef.current) {
+  if (!showComponent || (!lastFM.song && !lastPlayedSongRef.current)) {
     return null;
   }
+
+  const songToDisplay = lastFM.status === "playing" ? lastFM.song : lastPlayedSongRef.current;
 
   return (
     <AnimatePresence>
@@ -58,32 +50,16 @@ export default function LastFm() {
       >
         <Card className="bg-card overflow-hidden">
           <CardContent className="p-6 flex flex-col sm:flex-row items-center h-24">
-            {songToDisplay && lastFM.status ? (
+            {songToDisplay ? (
               <>
-                <div className="relative sm:mb-0 sm:mr-4 -ml-2 w-16 h-16 hidden sm:block">
-                  {!imageLoaded && (
-                    <motion.div
-                      initial={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="absolute inset-0"
-                    >
-                      <Skeleton className="h-16 w-16 rounded-sm" />
-                    </motion.div>
-                  )}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: imageLoaded ? 1 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Image
-                      src={songToDisplay.art}
-                      height={64}
-                      width={64}
-                      alt="Album Art"
-                      className="rounded-sm"
-                      onLoad={() => setImageLoaded(true)}
-                    />
-                  </motion.div>
+                <div className="sm:mb-0 sm:mr-4 -ml-2 w-16 h-16 hidden sm:block">
+                  <Image
+                    src={songToDisplay.art}
+                    height={64}
+                    width={64}
+                    alt="Album Art"
+                    className="rounded-sm"
+                  />
                 </div>
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -91,9 +67,7 @@ export default function LastFm() {
                   transition={{ delay: 0.2 }}
                 >
                   <p className="text-lg font-semibold">
-                    {isCurrentlyPlaying
-                      ? "Now listening to"
-                      : "Last played song"}
+                    {isCurrentlyPlaying ? "Now listening to" : "Last played song"}
                   </p>
                   <a
                     href={songToDisplay.url}

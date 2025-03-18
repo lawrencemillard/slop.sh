@@ -6,12 +6,9 @@ body {
   font-family: var(--font-league-spartan), var(--font-inter), sans-serif;
 }
 
-.mozart-image {
-  transition: transform 0.3s ease-in-out;
-}
-
 .mozart-image:hover {
   transform: scale(1.05);
+  animation: none;
 }
 
 ::-webkit-scrollbar {
@@ -87,7 +84,6 @@ html {
   }
 }
 
-/* Responsive styles for different screen sizes */
 @media (max-width: 768px) {
   body {
     font-size: 14px;
@@ -106,7 +102,6 @@ html {
   }
 }
 
-/* Animations using @keyframes */
 @keyframes buttonHover {
   0% {
     transform: scale(1);
@@ -133,10 +128,6 @@ button:hover {
   100% {
     transform: scale(1);
   }
-}
-
-.mozart-image:hover {
-  animation: imageHover 0.3s ease-in-out;
 }
 
 @layer base {

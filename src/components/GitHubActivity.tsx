@@ -31,13 +31,15 @@ export default function GitHubActivity() {
           <h2 className="text-xl font-semibold">GitHub Activity</h2>
         </div>
         <CardContent className="pl-8 pt-4">
-          <motion.div className="space-y-4">
-            <GitHubCalendar
-              username="q4ow"
-              colorScheme={"dark"}
-              hideColorLegend
-              hideMonthLabels
-            />
+          <motion.div className="space-y-4 overflow-hidden w-full">
+            <div className="w-full overflow-x-hidden">
+              <GitHubCalendar
+                username="q4ow"
+                colorScheme={"dark"}
+                hideColorLegend
+                hideMonthLabels
+              />
+            </div>
           </motion.div>
         </CardContent>
       </Card>
