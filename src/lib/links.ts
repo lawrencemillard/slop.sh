@@ -11,8 +11,6 @@ import { SiBuymeacoffee } from "react-icons/si";
 
 export const Links = [
   { href: "/projects", label: "Projects" },
-  { href: "/bio", label: "E-Z Bio" },
-  { href: "/sky", label: "SkyCrypt" },
   // { href: "/blog", label: "Blog" },
   { href: "https://github.com/q4ow/slop.sh", label: "Source", external: true },
 ];
