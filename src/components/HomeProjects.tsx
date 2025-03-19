@@ -19,11 +19,6 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
 const projects = [
   {
     title: "slop.sh",
@@ -58,9 +53,27 @@ export default function HomeProjects() {
           <h2 className="text-xl font-semibold">Current Projects</h2>
         </div>
         <CardContent className="p-8">
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
-              <motion.div key={index} variants={itemVariants} className="group">
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  x: index % 2 === 0 ? -100 : 100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15,
+                    delay: index * 0.2,
+                  },
+                }}
+                viewport={{ once: true, amount: 0.2 }}
+                className="group"
+              >
                 <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-md border border-border bg-card/50 hover:bg-card/80 flex flex-col">
                   <div className="relative h-48 w-full overflow-hidden">
                     <Image
@@ -117,7 +130,7 @@ export default function HomeProjects() {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </CardContent>
       </Card>
     </motion.div>
