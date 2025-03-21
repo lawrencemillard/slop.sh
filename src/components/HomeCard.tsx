@@ -41,6 +41,8 @@ export default function HomeCard() {
     return age;
   };
 
+  const isLastFm = LastFm();
+
   const myAge = calculateAge(new Date("2009-03-25"));
 
   useEffect(() => {
@@ -57,7 +59,7 @@ export default function HomeCard() {
       exit="hidden"
       variants={containerVariants}
       viewport={{ once: true, amount: 0.2 }}
-      className="w-full max-w-4xl mx-auto min-h-[50vh] flex items-center justify-center pt-8"
+      className="w-full max-w-[902px] mx-auto min-h-[50vh] flex items-center justify-center pt-8"
     >
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
         <motion.div
@@ -143,14 +145,16 @@ export default function HomeCard() {
             >
               <CoffeeButton />
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ delay: 1.2 }}
-            >
-              <LastFm />
-            </motion.div>
+            {isLastFm && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: 1.2 }}
+              >
+                <LastFm />
+              </motion.div>
+            )}
             {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

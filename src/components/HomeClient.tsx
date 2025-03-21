@@ -1,7 +1,6 @@
 "use client";
 
 import { Suspense } from "react";
-import Navbar from "@/components/Navbar";
 import HomeCard from "@/components/HomeCard";
 import GitHubActivity from "@/components/GitHubActivity";
 import HomeProjects from "@/components/HomeProjects";
@@ -17,7 +16,6 @@ export default function HomeClient() {
     <>
       {isDesktop ? (
         <ScrollArea className="h-screen">
-          <Navbar />
           <main className="container mx-auto px-4 space-y-8 py-20">
             <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <HomeCard />
@@ -35,7 +33,6 @@ export default function HomeClient() {
         </ScrollArea>
       ) : (
         <>
-          <Navbar />
           <main className="container mx-auto px-4 space-y-24 py-40">
             <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <HomeCard />

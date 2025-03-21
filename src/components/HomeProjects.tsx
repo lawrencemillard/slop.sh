@@ -15,6 +15,7 @@ const containerVariants = {
     transition: {
       duration: 0.5,
       staggerChildren: 0.1,
+      delay: 0.4,
     },
   },
 };
@@ -46,7 +47,7 @@ export default function HomeProjects() {
       whileInView="visible"
       variants={containerVariants}
       viewport={{ once: true, amount: 0.2 }}
-      className="w-full max-w-4xl mx-auto"
+      className="w-full max-w-[902px] mx-auto"
     >
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
         <div className="pl-8 pt-8 flex items-center">

@@ -3,6 +3,7 @@ import GridPattern from "@/components/ui/grid-pattern";
 import "./globals.css";
 import type { ReactNode } from "react";
 import { Inter, League_Spartan } from "next/font/google";
+import Navbar from "@/components/Navbar";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -70,6 +71,7 @@ export default function RootLayout({
           width={50}
           style={{ opacity: 0.1 }}
         />
+        <Navbar />
         <main className="relative z-10">{children}</main>
       </body>
     </html>

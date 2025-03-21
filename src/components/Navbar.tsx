@@ -29,38 +29,42 @@ export default function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-4xl fixed top-2 sm:top-4 rounded-lg shadow-md border border-border px-4"
+        className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-[902px] fixed top-2 sm:top-4 rounded-lg shadow-md border border-border px-2"
       >
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4">
           <Link
             href="/"
-            className="text-2xl font-bold hover:text-primary/80 ml-4 transition-colors"
+            className="text-2xl font-semibold hover:text-primary/80 ml-3 transition-colors"
           >
             slop.sh
           </Link>
           {!isMobile && (
-            <nav className="hidden md:flex gap-6">
-              {Links.map(
-                (link) =>
-                  !link.external && (
-                    <motion.div
-                      key={link.href}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                    >
-                      <Link
-                        href={link.href}
-                        className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 pt-3 pb-2 rounded transition-colors"
-                        target={link.href !== "/projects" ? "_blank" : "_self"}
-                        rel="noopener noreferrer"
+            <>
+              <nav className="hidden md:flex gap-6">
+                {Links.map(
+                  (link) =>
+                    !link.external && (
+                      <motion.div
+                        key={link.href}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                       >
-                        {link.label}
-                      </Link>
-                    </motion.div>
-                  ),
-              )}
-            </nav>
+                        <Link
+                          href={link.href}
+                          className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 pt-3 pb-2 rounded transition-colors"
+                          target={
+                            link.href !== "/projects" ? "_blank" : "_self"
+                          }
+                          rel="noopener noreferrer"
+                        >
+                          {link.label}
+                        </Link>
+                      </motion.div>
+                    ),
+                )}
+              </nav>
+            </>
           )}
         </div>
         <div className="flex items-center gap-2">

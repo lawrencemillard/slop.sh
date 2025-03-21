@@ -6,12 +6,13 @@ import GitHubCalendar from "react-github-calendar";
 import { FiGithub } from "react-icons/fi";
 
 const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 100 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.5,
+      delay: 0.2,
     },
   },
 };
@@ -23,7 +24,7 @@ export default function GitHubActivity() {
       whileInView="visible"
       variants={containerVariants}
       viewport={{ once: true, amount: 0.2 }}
-      className="w-full max-w-4xl mx-auto"
+      className="w-full max-w-[902px] mx-auto"
     >
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
         <div className="pl-8 pt-8 flex items-center">

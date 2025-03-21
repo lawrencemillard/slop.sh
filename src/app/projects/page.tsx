@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { memo } from "react";
@@ -16,8 +15,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -135,7 +132,6 @@ ProjectCard.displayName = "ProjectCard";
 export default function ProjectsPage() {
   return (
     <>
-      <Navbar />
       <motion.div
         className="min-h-screen flex flex-col max-w-[60rem] w-full mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-full"
         initial="hidden"
