@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import GitHubCalendar from "react-github-calendar";
@@ -32,10 +31,10 @@ export default function GitHubActivity() {
 
   const itemVariant = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.4, delay: 0.2 }, 
+      transition: { duration: 0.4, delay: 0.2 },
     },
   };
 
@@ -56,8 +55,8 @@ export default function GitHubActivity() {
             viewport={{ once: true }}
             className="space-y-4 overflow-hidden w-full"
           >
-            <motion.div 
-              variants={itemVariant} 
+            <motion.div
+              variants={itemVariant}
               className="w-full overflow-x-auto pb-2"
             >
               <div className="min-w-[750px]">
@@ -68,13 +67,13 @@ export default function GitHubActivity() {
                     totalCount: "{{count}} contributions in the last year",
                   }}
                   theme={{
-                    dark: ['#333', '#fff']
+                    dark: ["#333", "#fff"],
                   }}
                 />
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               variants={itemVariant}
               className="flex justify-between items-center"
             >
