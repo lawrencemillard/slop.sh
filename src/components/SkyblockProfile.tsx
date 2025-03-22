@@ -89,7 +89,7 @@ export default function SkyblockProfile() {
 
   if (loading) {
     return (
-      <Card className="w-full max-w-[902px] mx-auto bg-background/50 backdrop-blur-sm border border-border shadow-lg">
+      <Card className="w-full max-w-[912px] mx-auto bg-background/50 backdrop-blur-sm border border-border shadow-lg">
         <CardHeader>
           <CardTitle className="flex items-center gap-4">
             <Skeleton className="h-16 w-16 rounded-full" />
@@ -115,7 +115,7 @@ export default function SkyblockProfile() {
 
   if (error || !profileData) {
     return (
-      <Card className="w-full max-w-[902px] mx-auto bg-background/50 backdrop-blur-sm border border-border shadow-lg">
+      <Card className="w-full max-w-[912px] mx-auto bg-background/50 backdrop-blur-sm border border-border shadow-lg">
         <CardContent className="p-8">
           <div className="text-center space-y-4">
             <h3 className="text-2xl font-bold text-red-500">
@@ -135,7 +135,7 @@ export default function SkyblockProfile() {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="w-full max-w-[902px] mx-auto"
+      className="w-full max-w-[912px] mx-auto"
     >
       <Card className="bg-background/50 backdrop-blur-sm border border-border shadow-lg overflow-hidden">
         <CardHeader className="pb-2">

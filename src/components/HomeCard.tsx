@@ -18,7 +18,6 @@ const containerVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      delay: 0.2,
     },
   },
 };
@@ -59,7 +58,7 @@ export default function HomeCard() {
       exit="hidden"
       variants={containerVariants}
       viewport={{ once: true, amount: 0.2 }}
-      className="w-full max-w-[902px] mx-auto min-h-[50vh] flex items-center justify-center pt-8"
+      className="w-full max-w-[912px] mx-auto flex items-center justify-center pt-12"
     >
       <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
         <motion.div
@@ -67,7 +66,6 @@ export default function HomeCard() {
           animate={{ opacity: 1, x: 0 }}
           transition={{
             duration: 0.5,
-            delay: 0.3,
             type: "spring",
             stiffness: 100,
           }}

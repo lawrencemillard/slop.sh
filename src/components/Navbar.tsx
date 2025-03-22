@@ -29,7 +29,7 @@ export default function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-[902px] fixed top-2 sm:top-4 rounded-lg shadow-md border border-border px-2"
+        className="bg-background/50 backdrop-blur-sm text-foreground flex items-center justify-between h-14 sm:h-16 z-50 w-[95%] sm:w-[90%] md:w-[85%] max-w-[912px] fixed top-2 sm:top-4 rounded-lg shadow-md border border-border px-2"
       >
         <div className="flex items-center gap-4">
           <Link

@@ -16,7 +16,7 @@ export default function HomeClient() {
     <>
       {isDesktop ? (
         <ScrollArea className="h-screen">
-          <main className="container mx-auto px-4 space-y-8 py-20">
+          <main className="container mx-auto px-4 space-y-8 py-16">
             <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <HomeCard />
             </Suspense>

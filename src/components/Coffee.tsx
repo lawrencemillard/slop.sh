@@ -10,7 +10,7 @@ const buttonVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      delay: 0.7,
+      delay: 0.4,
     },
   },
 };
@@ -24,7 +24,7 @@ export function CoffeeButton() {
     <motion.div initial="hidden" animate="show" variants={buttonVariants}>
       <Button
         onClick={handleClick}
-        className="bg-background hover:bg-primary/10 hover:scale-105 text-primary font-semibold transition-all flex items-center gap-2 border border-border"
+        className="bg-background hover:bg-primary/10 text-primary font-semibold transition-all flex items-center gap-2 border border-border transform-none"
       >
         <SiBuymeacoffee className="w-6 h-6" />
         <span className="mt-1 text-base">Buy me a coffee</span>
