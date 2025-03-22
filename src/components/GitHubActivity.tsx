@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import GitHubCalendar from "react-github-calendar";
 import { FiGithub } from "react-icons/fi";
@@ -20,15 +20,6 @@ const containerVariants = {
 };
 
 export default function GitHubActivity() {
-  const [showContent, setShowContent] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, []);
-
   const stagger = {
     hidden: { opacity: 0 },
     visible: {
