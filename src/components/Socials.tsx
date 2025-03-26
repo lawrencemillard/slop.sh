@@ -30,7 +30,7 @@ export default function Socials() {
       initial="hidden"
       animate="show"
       variants={containerVariants}
-      className="flex gap-3 mb-4"
+      className="flex gap-3"
     >
       {linksToShow.map(({ icon: Icon, href, label }) => (
         <motion.div key={label} variants={itemVariants}>

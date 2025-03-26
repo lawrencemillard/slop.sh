@@ -132,14 +132,14 @@ export default function HomeCard() {
             >
               <Socials />
             </motion.div>
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ delay: 1.0 }}
             >
               <CoffeeButton />
-            </motion.div>
+            </motion.div> */}
             {isLastFm && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

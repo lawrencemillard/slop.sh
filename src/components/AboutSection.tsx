@@ -6,7 +6,7 @@ export default function AboutSection() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 }}
-      className="pt-4 space-y-2 mb-4"
+      className="pt-4 space-y-2 mb-8"
     >
       <h2 className="text-2xl font-semibold">About</h2>
       <p className="text-muted-foreground leading-relaxed">
