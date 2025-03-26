@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import LastFm from "@/components/LastFm";
 import Socials from "@/components/Socials";
 import AboutSection from "@/components/AboutSection";
-import { CoffeeButton } from "@/components/Coffee";
+// import { CoffeeButton } from "@/components/Coffee";
 // import WorkInProgress from "@/components/WorkInProgress";
 
 const containerVariants = {
