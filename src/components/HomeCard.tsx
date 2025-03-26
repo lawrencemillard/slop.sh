@@ -77,13 +77,13 @@ export default function HomeCard() {
           </Avatar>
         </motion.div>
         <CardContent className="p-8">
-          <motion.div className="space-y-8">
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ delay: 0.2 }}
-              className="space-y-2"
+              className="space-y-2 mb-4"
             >
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -92,10 +92,7 @@ export default function HomeCard() {
                 transition={{ delay: 0.2 }}
                 className="text-4xl font-bold tracking-tight"
               >
-                Hey, I&apos;m{" "}
-                <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-                  Keiran
-                </span>
+                Hey, I&apos;m Keiran
               </motion.h1>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -168,7 +165,7 @@ export default function HomeCard() {
             >
               <WorkInProgress />
             </motion.div> */}
-          </motion.div>
+          </div>
         </CardContent>
       </Card>
     </motion.div>
