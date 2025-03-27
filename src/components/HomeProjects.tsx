@@ -49,7 +49,7 @@ export default function HomeProjects() {
       viewport={{ once: true, amount: 0.2 }}
       className="w-full max-w-[912px] mx-auto"
     >
-      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
+      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-xs border border-border shadow-lg">
         <div className="pl-8 pt-8 flex items-center">
           <h2 className="text-xl font-semibold">Current Projects</h2>
         </div>
@@ -84,7 +84,7 @@ export default function HomeProjects() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <CardContent className="p-6 flex flex-col flex-grow">
+                  <CardContent className="p-6 flex flex-col grow">
                     <h3 className="text-lg font-bold mb-2 line-clamp-1">
                       {project.title}
                     </h3>

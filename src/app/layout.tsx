@@ -59,7 +59,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${leagueSpartan.variable} ${inter.variable}`}
+      className={`${leagueSpartan.variable} ${inter.variable} dark`}
     >
       <body
         suppressHydrationWarning={true}

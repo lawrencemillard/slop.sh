@@ -18,7 +18,7 @@ export default function HamburgerMenu() {
         onClick={() => setIsOpen(!isOpen)}
         variant="ghost"
         size="icon"
-        className="text-muted-foreground hover:text-foreground focus:outline-none"
+        className="text-muted-foreground hover:text-foreground focus:outline-hidden"
       >
         <svg
           className="w-5 h-5"
@@ -39,7 +39,7 @@ export default function HamburgerMenu() {
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         variants={menuVariants}
-        className="absolute top-14 -right-6 w-full bg-background/50 backdrop-blur-sm text-foreground flex flex-col items-start pr-16 pl-4 py-2 shadow-lg border border-border rounded-lg transform"
+        className="absolute top-14 -right-6 w-full bg-background/50 backdrop-blur-xs text-foreground flex flex-col items-start pr-16 pl-4 py-2 shadow-lg border border-border rounded-lg transform"
       >
         {Links.map((link) => (
           <Link

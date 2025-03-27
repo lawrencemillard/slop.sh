@@ -60,7 +60,7 @@ export default function HomeCard() {
       viewport={{ once: true, amount: 0.2 }}
       className="w-full max-w-[912px] mx-auto flex items-center justify-center pt-12"
     >
-      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
+      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-xs border border-border shadow-lg">
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}

@@ -31,7 +31,7 @@ export default function MozartGallery() {
       viewport={{ once: true, amount: 0.2 }}
       className="w-full max-w-[912px] mx-auto"
     >
-      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg">
+      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-xs border border-border shadow-lg">
         <CardContent className="p-8">
           <motion.h1
             className="text-4xl font-bold text-center mb-8"

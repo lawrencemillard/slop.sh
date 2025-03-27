@@ -46,7 +46,7 @@ export default function GitHubActivity() {
       viewport={{ once: true, amount: 0.2 }}
       className="w-full max-w-[912px] mx-auto"
     >
-      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-sm border border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <Card className="relative overflow-hidden bg-background/50 backdrop-blur-xs border border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
         <CardContent className="p-8">
           <motion.div
             variants={stagger}
