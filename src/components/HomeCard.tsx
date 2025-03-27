@@ -71,10 +71,20 @@ export default function HomeCard() {
           }}
           className="absolute top-9 right-6"
         >
-          <Avatar className="w-24 h-24 hover:scale-105 transition-transform duration-200">
-            <AvatarImage src="/avatar.png" alt="Keiran" />
-            <AvatarFallback>K</AvatarFallback>
-          </Avatar>
+            <Avatar 
+            className="w-24 h-24 border-2 border-chart-1/80 transition-all duration-300 hover:scale-105 hover:border-chart-1 cursor-pointer"
+            role="img"
+            aria-label="Profile picture of Keiran"
+            onClick={() => window.open('https://hyprland.org', '_blank')}
+            >
+            <AvatarImage 
+              src="/avatar2.png" 
+              alt="Keiran's profile picture"
+              loading="eager"
+              className="object-cover"
+            />
+            <AvatarFallback delayMs={600}>K</AvatarFallback>
+            </Avatar>
         </motion.div>
         <CardContent className="p-8">
           <div>
