@@ -47,7 +47,7 @@ export default function LastFm() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.3 }}
-        className="w-full max-w-96"
+        className="w-full max-w-96 mt-8"
       >
         <Card className="bg-card overflow-hidden">
           <CardContent className="p-6 flex flex-col sm:flex-row items-center h-24">
