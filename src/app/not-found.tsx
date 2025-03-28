@@ -21,7 +21,7 @@ export default function NotFound() {
           className="text-lg font-bold hover:bg-primary/10 rounded transition-colors duration-200 ease-in-out px-8 py-2 select-none"
           href="/"
         >
-          Go back home
+          Go back
         </Link>
       </div>
     </>
