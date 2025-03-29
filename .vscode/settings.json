@@ -1,5 +1,15 @@
 {
     "css.lint.unknownAtRules": "ignore",
     "scss.lint.unknownAtRules": "ignore",
-    "less.lint.unknownAtRules": "ignore"
+    "less.lint.unknownAtRules": "ignore",
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/.next": true,
+        "**/.github": true,
+        "**next-env.d.ts": true,
+        "**pnpm-lock.yaml": true,
+        "**components.json": true,
+    },
 }
