@@ -1,8 +1,5 @@
 import { NextRequest } from 'next/server';
-
-const links: Record<string, string> = {
-    github: 'https://github.com/q4ow',
-};
+import { redirectLinks } from '@/lib/links';
 
 type ContextType = {
     params: Promise<{
@@ -18,14 +15,14 @@ export async function GET(
         const params = await context.params;
         const { alias } = params;
 
-        if (!alias || !(alias in links)) {
+        if (!alias || !(alias in redirectLinks)) {
             return new Response(JSON.stringify({ error: 'Page not found' }), { 
                 status: 404,
                 headers: { 'Content-Type': 'application/json' }
             });
         }
 
-        const destinationUrl = links[alias];
+        const destinationUrl = redirectLinks[alias];
         
         return Response.redirect(destinationUrl, 308);
     } catch (error) {
