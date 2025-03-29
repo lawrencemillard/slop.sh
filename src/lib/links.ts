@@ -63,3 +63,11 @@ export const SocialLinks = [
   },
   { icon: FaRegEnvelope, href: "mailto:hi@slop.sh", label: "Email" },
 ];
+
+export const redirectLinks: Record<string, string> = {
+  github: "https://github.com/q4ow",
+  discord: "https://discord.com/users/1230319937155760131",
+  discord2: "https://discord.com/users/1353861908427702284",
+  namemc: "https://namemc.com/profile/keirancc.1",
+  lastfm: "https://www.last.fm/user/Kuuichi2",
+}
