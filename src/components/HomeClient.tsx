@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import HomeCard from "@/components/HomeCard";
 import GitHubActivity from "@/components/GitHubActivity";
 import HomeProjects from "@/components/HomeProjects";
-import MozartGallery from "@/components/MozartGallery";
+// import MozartGallery from "@/components/MozartGallery";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useMediaQuery } from "react-responsive";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -26,9 +26,9 @@ export default function HomeClient() {
             <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <HomeProjects />
             </Suspense>
-            <Suspense fallback={<Skeleton className="h-24 w-full" />}>
+            {/* <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <MozartGallery />
-            </Suspense>
+            </Suspense> */}
           </main>
         </ScrollArea>
       ) : (
@@ -43,9 +43,9 @@ export default function HomeClient() {
             <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <HomeProjects />
             </Suspense>
-            <Suspense fallback={<Skeleton className="h-24 w-full" />}>
+            {/* <Suspense fallback={<Skeleton className="h-24 w-full" />}>
               <MozartGallery />
-            </Suspense>
+            </Suspense> */}
           </main>
         </>
       )}
