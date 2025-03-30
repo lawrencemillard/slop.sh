@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -24,17 +24,13 @@ if [[ $? -ne 0 ]]; then
   exit 1
 fi
 
-echo -e "${YELLOW}Diving into the HyDE installation...${NC}"
+echo -e "${YELLOW}Navigating to the HyDE scripts directory...${NC}"
 cd ~/HyDE/Scripts
 if [[ $? -ne 0 ]]; then
   echo -e "${RED}Couldn't navigate to the HyDE scripts directory.${NC}"
   exit 1
 fi
 
-./install.sh
-if [[ $? -ne 0 ]]; then
-  echo -e "${RED}HyDE installation script failed. Check the output for errors.${NC}"
-  exit 1
-fi
+echo -e "${YELLOW}Please run '~/HyDE/Scripts/install.sh' to complete the installation.${NC}"
 
 exit 0
