@@ -15,7 +15,6 @@ export default function FeatureCard({ title, description, icon }: FeatureCardPro
             whileHover={{ scale: 1.05, boxShadow: "0px 8px 24px rgba(0,0,0,0.15)" }}
             whileTap={{ scale: 0.95 }}
             className="cursor-pointer"
-            transition={{ type: "spring", stiffness: 300 }}
         >
             <Card className="h-full border border-border shadow-sm hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-2 flex items-center gap-2">
