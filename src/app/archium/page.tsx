@@ -10,31 +10,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { LuExternalLink, LuTerminal, LuPackage, LuGithub, LuMail, LuBell, LuInfo, LuList, LuRocket, LuSearch, LuGitBranch, LuTrash, LuTrash2, LuFolderOutput } from "react-icons/lu";
 import Link from "next/link";
 import FeatureCard from "@/components/FeatureCard";
-
-const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.5,
-        },
-    },
-};
-
-const featureItems = [
-    { icon: <LuPackage className="w-5 h-5" />, title: "System Updates", description: "Update your system/specific packages" },
-    { icon: <LuTerminal className="w-5 h-5" />, title: "Package Installation", description: "Install packages with simple commands" },
-    { icon: <LuTrash className="w-5 h-5" />, title: "Package Removal", description: "Remove unwanted packages cleanly" },
-    { icon: <LuFolderOutput className="w-5 h-5" />, title: "Cache Cleaning", description: "Clean package cache to free up disk space" },
-    { icon: <LuPackage className="w-5 h-5" />, title: "Orphan Management", description: "Clean or list orphaned packages" },
-    { icon: <LuSearch className="w-5 h-5" />, title: "Package Search", description: "Find the packages you need" },
-    { icon: <LuList className="w-5 h-5" />, title: "Package Listing", description: "List all installed packages" },
-    { icon: <LuInfo className="w-5 h-5" />, title: "Package Information", description: "Get detailed information about packages" },
-    { icon: <LuGitBranch className="w-5 h-5" />, title: "Dependency Tree", description: "Visualize package dependencies" },
-    { icon: <LuBell className="w-5 h-5" />, title: "Update Checking", description: "Check for available updates" },
-    { icon: <LuRocket className="w-5 h-5" />, title: "In active development", description: "More awesome features to come!" },
-];
+import CopyButton from "@/components/CopyButton";
+import { dependencies, containerVariants, featureItems } from "@/lib/archium";
+import { Dependencies } from "@/components/Dependencies";
 
 export default function ArchiumPage() {
     const [version, setVersion] = useState("Loading...");
@@ -134,7 +112,7 @@ export default function ArchiumPage() {
                 </Card>
 
                 <Tabs defaultValue="features" className="w-full">
-                    <TabsList className="grid grid-cols-4 mb-8">
+                    <TabsList className="w-full flex justify-center items-center gap-4 mb-8 max-w-xl mx-auto">
                         <TabsTrigger value="features">Features</TabsTrigger>
                         <TabsTrigger value="installation">Installation</TabsTrigger>
                         <TabsTrigger value="usage">Usage</TabsTrigger>
@@ -142,7 +120,7 @@ export default function ArchiumPage() {
                     </TabsList>
 
                     <TabsContent value="features" className="space-y-4">
-                        <h2 className="text-2xl font-semibold mb-6">✨ Features</h2>
+                        <h2 className="text-2xl font-semibold mb-6 text-center">Features</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {featureItems.map((feature, index) => (
                                 <FeatureCard
@@ -158,59 +136,36 @@ export default function ArchiumPage() {
                     <TabsContent value="installation">
                         <Card>
                             <CardHeader>
-                                <CardTitle>🛠️ Installation</CardTitle>
+                                <CardTitle>Installation</CardTitle>
                                 <CardDescription>Follow these steps to install Archium</CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-6">
                                 <div>
                                     <h3 className="font-bold mb-2">1. Clone the Repository</h3>
-                                    <div className="relative">
-                                        <pre className="bg-muted p-3 rounded-md overflow-x-auto font-mono text-sm">
-                                            git clone https://github.com/q4ow/archium.git
-                                            cd archium
-                                        </pre>
-                                        <Button
-                                            variant="ghost"
-                                            size="sm"
-                                            className="absolute top-2 right-2"
-                                            onClick={() => navigator.clipboard.writeText("git clone https://github.com/q4ow/archium.git\ncd archium")}
-                                        >
-                                            Copy
-                                        </Button>
-                                    </div>
+                                    <pre className="bg-muted p-3 rounded-md overflow-x-auto font-mono text-sm relative pb-4">
+                                        git clone https://github.com/q4ow/archium.git
+                                        cd archium
+                                        <CopyButton textToCopy={"git clone https://github.com/q4ow/archium.git\ncd archium"} />
+                                    </pre>
                                 </div>
 
                                 <div>
                                     <h3 className="font-bold mb-2">2. Compile the Program</h3>
                                     <div className="relative">
-                                        <pre className="bg-muted p-3 rounded-md overflow-x-auto font-mono text-sm">
+                                        <pre className="bg-muted p-3 pb-4 rounded-md overflow-x-auto font-mono text-sm">
                                             make
                                         </pre>
-                                        <Button
-                                            variant="ghost"
-                                            size="sm"
-                                            className="absolute top-2 right-2"
-                                            onClick={() => navigator.clipboard.writeText("make")}
-                                        >
-                                            Copy
-                                        </Button>
+                                        <CopyButton textToCopy="make" />
                                     </div>
                                 </div>
 
                                 <div>
                                     <h3 className="font-bold mb-2">3. Install the Binary (Requires Root Permissions)</h3>
                                     <div className="relative">
-                                        <pre className="bg-muted p-3 rounded-md overflow-x-auto font-mono text-sm">
+                                        <pre className="bg-muted p-3 pb-4 rounded-md overflow-x-auto font-mono text-sm">
                                             sudo make install
                                         </pre>
-                                        <Button
-                                            variant="ghost"
-                                            size="sm"
-                                            className="absolute top-2 right-2"
-                                            onClick={() => navigator.clipboard.writeText("sudo make install")}
-                                        >
-                                            Copy
-                                        </Button>
+                                        <CopyButton textToCopy="sudo make install" />
                                     </div>
                                 </div>
                             </CardContent>
@@ -233,7 +188,7 @@ export default function ArchiumPage() {
                             <CardContent className="space-y-6">
                                 <div>
                                     <p className="mb-2">When you run <code className="bg-muted px-1 rounded">archium</code>, you will see:</p>
-                                    <div className="bg-muted p-4 rounded-md overflow-x-auto font-mono text-sm border-l-4 border-primary">
+                                    <div className="bg-muted p-4 rounded-md overflow-x-auto font-mono text-sm">
                                         Welcome to Archium, type "h" for help<br />
                                         Archium $
                                     </div>
@@ -364,28 +319,7 @@ export default function ArchiumPage() {
                                     <CardTitle>📦 Dependencies</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <ul className="space-y-2">
-                                        <li className="flex items-start">
-                                            <Badge variant="outline" className="mr-2 mt-1">gcc</Badge>
-                                            <span>GNU Compiler Collection</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <Badge variant="outline" className="mr-2 mt-1">yay/paru</Badge>
-                                            <span>AUR helpers for Arch Linux</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <Badge variant="outline" className="mr-2 mt-1">git</Badge>
-                                            <span>For installing <code className="bg-muted px-1 rounded">yay</code></span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <Badge variant="outline" className="mr-2 mt-1">readline</Badge>
-                                            <span>Library for command-line input</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <Badge variant="outline" className="mr-2 mt-1">ncurses</Badge>
-                                            <span>Library for text-based UIs</span>
-                                        </li>
-                                    </ul>
+                                    <Dependencies dependencies={dependencies} />
                                 </CardContent>
                             </Card>
 
