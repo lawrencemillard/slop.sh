@@ -70,4 +70,4 @@ export const redirectLinks: Record<string, string> = {
   discord2: "https://discord.com/users/1353861908427702284",
   namemc: "https://namemc.com/profile/keirancc.1",
   lastfm: "https://www.last.fm/user/Kuuichi2",
-}
+};
