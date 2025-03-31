@@ -88,22 +88,21 @@ export default function ArchiumPage() {
                             <div className="flex justify-center gap-4 mt-6">
                                 <Button
                                     variant="default"
-                                    className="gap-2"
+                                    className="h-8 gap-2"
                                     asChild
                                 >
-                                    <Link href="https://github.com/q4ow/archium" target="_blank" rel="noopener noreferrer">
+                                    <Link href="https://github.com/q4ow/archium" target="_blank" rel="noopener noreferrer" className="flex items-center">
                                         <LuGithub className="w-4 h-4" />
                                         GitHub
                                     </Link>
                                 </Button>
                                 <Button
                                     variant="outline"
-                                    className="gap-2"
+                                    className="h-8 gap-2"
                                     asChild
                                 >
-                                    <Link href="https://github.com/q4ow/archium#%EF%B8%8F-installation" target="_blank" rel="noopener noreferrer">
-                                        <LuTerminal className="w-4 h-4" />
-                                        Installation Guide
+                                    <Link href="https://github.com/q4ow/archium#%EF%B8%8F-installation" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                                        Get Started
                                     </Link>
                                 </Button>
                             </div>
@@ -334,35 +333,21 @@ export default function ArchiumPage() {
                                             <code className="bg-muted px-1 rounded">paru</code>, create a file:
                                         </p>
                                         <div className="relative">
-                                            <pre className="bg-muted p-3 rounded-md overflow-x-auto font-mono text-sm">
+                                            <pre className="bg-muted p-3 pb-4 rounded-md overflow-x-auto font-mono text-sm">
                                                 touch $HOME/.archium-use-paru
                                             </pre>
-                                            <Button
-                                                variant="ghost"
-                                                size="sm"
-                                                className="absolute top-2 right-2"
-                                                onClick={() => navigator.clipboard.writeText("touch $HOME/.archium-use-paru")}
-                                            >
-                                                Copy
-                                            </Button>
+                                            <CopyButton textToCopy="touch $HOME/.archium-use-paru" />
                                         </div>
                                     </div>
 
                                     <div>
                                         <p className="mb-2">If Archium fails to upgrade to a newer version:</p>
                                         <div className="relative">
-                                            <pre className="bg-muted p-3 rounded-md overflow-x-auto font-mono text-sm">
+                                            <pre className="bg-muted p-3 pb-4 rounded-md overflow-x-auto font-mono text-sm">
                                                 yay -Scc --noconfirm && yay -S archium --noconfirm
                                                 paru -Scc --noconfirm && paru -S archium --noconfirm
                                             </pre>
-                                            <Button
-                                                variant="ghost"
-                                                size="sm"
-                                                className="absolute top-2 right-2"
-                                                onClick={() => navigator.clipboard.writeText("yay -Scc --noconfirm && yay -S archium --noconfirm\nparu -Scc --noconfirm && paru -S archium --noconfirm")}
-                                            >
-                                                Copy
-                                            </Button>
+                                            <CopyButton textToCopy="yay -Scc --noconfirm && yay -S archium --noconfirm\nparu -Scc --noconfirm && paru -S archium --noconfirm" />
                                         </div>
                                     </div>
                                 </CardContent>
