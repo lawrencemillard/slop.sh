@@ -7,8 +7,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { LuExternalLink, LuTerminal, LuPackage, LuCode, LuCoffee, LuGithub, LuMail } from "react-icons/lu";
+import { LuExternalLink, LuTerminal, LuPackage, LuGithub, LuMail, LuBell, LuInfo, LuList, LuRocket, LuSearch, LuGitBranch, LuTrash, LuTrash2, LuFolderOutput } from "react-icons/lu";
 import Link from "next/link";
+import FeatureCard from "@/components/FeatureCard";
 
 const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -22,18 +23,17 @@ const containerVariants = {
 };
 
 const featureItems = [
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "🔄", title: "System Updates", description: "Update your system or specific packages with ease" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "📦", title: "Package Installation", description: "Install packages with simple commands" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "❌", title: "Package Removal", description: "Remove unwanted packages cleanly" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "🗑️", title: "Package Purging", description: "Completely remove packages and their dependencies" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "🧹", title: "Cache Cleaning", description: "Clean package cache to free up disk space" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "🧩", title: "Orphan Management", description: "Clean or list orphaned packages" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "🔍", title: "Package Search", description: "Find the packages you need" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "📋", title: "Package Listing", description: "List all installed packages" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "❓", title: "Package Information", description: "Get detailed information about packages" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "🌳", title: "Dependency Tree", description: "Visualize package dependencies" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "🔔", title: "Update Checking", description: "Check for available updates" },
-    { icon: <LuPackage className="w-5 h-5" />, emoji: "🚀", title: "In active development", description: "More awesome features to come!" },
+    { icon: <LuPackage className="w-5 h-5" />, title: "System Updates", description: "Update your system/specific packages" },
+    { icon: <LuTerminal className="w-5 h-5" />, title: "Package Installation", description: "Install packages with simple commands" },
+    { icon: <LuTrash className="w-5 h-5" />, title: "Package Removal", description: "Remove unwanted packages cleanly" },
+    { icon: <LuFolderOutput className="w-5 h-5" />, title: "Cache Cleaning", description: "Clean package cache to free up disk space" },
+    { icon: <LuPackage className="w-5 h-5" />, title: "Orphan Management", description: "Clean or list orphaned packages" },
+    { icon: <LuSearch className="w-5 h-5" />, title: "Package Search", description: "Find the packages you need" },
+    { icon: <LuList className="w-5 h-5" />, title: "Package Listing", description: "List all installed packages" },
+    { icon: <LuInfo className="w-5 h-5" />, title: "Package Information", description: "Get detailed information about packages" },
+    { icon: <LuGitBranch className="w-5 h-5" />, title: "Dependency Tree", description: "Visualize package dependencies" },
+    { icon: <LuBell className="w-5 h-5" />, title: "Update Checking", description: "Check for available updates" },
+    { icon: <LuRocket className="w-5 h-5" />, title: "In active development", description: "More awesome features to come!" },
 ];
 
 export default function ArchiumPage() {
@@ -145,23 +145,12 @@ export default function ArchiumPage() {
                         <h2 className="text-2xl font-semibold mb-6">✨ Features</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {featureItems.map((feature, index) => (
-                                <motion.div
+                                <FeatureCard
                                     key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.1 * index }}
-                                >
-                                    <Card className="h-full hover:shadow-md transition-shadow">
-                                        <CardHeader className="pb-2">
-                                            <CardTitle className="text-lg flex items-center gap-2">
-                                                <span>{feature.emoji}</span> {feature.title}
-                                            </CardTitle>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <p className="text-sm text-muted-foreground">{feature.description}</p>
-                                        </CardContent>
-                                    </Card>
-                                </motion.div>
+                                    title={feature.title}
+                                    description={feature.description}
+                                    icon={feature.icon}
+                                />
                             ))}
                         </div>
                     </TabsContent>
