@@ -54,7 +54,7 @@ export default function Navbar() {
                           href={link.href}
                           className="text-muted-foreground hover:text-foreground hover:bg-primary/10 px-3 pt-3 pb-2 rounded transition-colors"
                           target={
-                            link.href !== "/projects" ? "_blank" : "_self"
+                            link.href !== "/archium" ? "_blank" : "_self"
                           }
                           rel="noopener noreferrer"
                         >
