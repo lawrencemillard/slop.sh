@@ -25,7 +25,7 @@ export default function CopyButton({ textToCopy }: CopyButtonProps) {
         <Button
             variant="ghost"
             size="sm"
-            className="absolute top-2 right-2 flex items-center gap-1 transition duration-200 ease-in-out transform hover:scale-105 hover:bg-foreground/5"
+            className="absolute top-2 right-2 flex items-center gap-1 transition duration-200 ease-in-out transform border border-primary/10 hover:border-primary/50 bg-secondary"
             onClick={handleCopy}
         >
             {copied ? <LuCheck className="w-4 h-4 text-green-500" /> : <LuCopy className="w-4 h-4" />}

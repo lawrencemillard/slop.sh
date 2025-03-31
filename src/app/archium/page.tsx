@@ -77,9 +77,9 @@ export default function ArchiumPage() {
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4 }}
                         >
-                            <Badge variant="outline" className="text-md px-3 py-1 mb-4">
+                            <Badge variant="outline" className="text-md px-3 py-2">
                                 {loading || !version ? (
-                                    <Skeleton className="w-20 h-6 rounded-md" />
+                                    <Skeleton className="w-[49.5px] h-6 rounded-md" />
                                 ) : (
                                     version
                                 )}
@@ -395,6 +395,6 @@ export default function ArchiumPage() {
                     </TabsContent>
                 </Tabs>
             </div>
-        </motion.div>
+        </motion.div >
     );
 }
