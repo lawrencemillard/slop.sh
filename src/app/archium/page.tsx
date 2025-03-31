@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
 import { LuExternalLink, LuTerminal, LuPackage, LuCode, LuCoffee, LuGithub, LuMail } from "react-icons/lu";
 import Link from "next/link";
 
@@ -32,6 +33,7 @@ const featureItems = [
     { icon: <LuPackage className="w-5 h-5" />, emoji: "❓", title: "Package Information", description: "Get detailed information about packages" },
     { icon: <LuPackage className="w-5 h-5" />, emoji: "🌳", title: "Dependency Tree", description: "Visualize package dependencies" },
     { icon: <LuPackage className="w-5 h-5" />, emoji: "🔔", title: "Update Checking", description: "Check for available updates" },
+    { icon: <LuPackage className="w-5 h-5" />, emoji: "🚀", title: "In active development", description: "More awesome features to come!" },
 ];
 
 export default function ArchiumPage() {
@@ -41,13 +43,15 @@ export default function ArchiumPage() {
     useEffect(() => {
         const fetchLatestVersion = async () => {
             try {
-                const response = await fetch("https://api.github.com/repos/q4ow/archium/releases/latest");
-                if (!response.ok) throw new Error("Failed to fetch version");
+                const response = await fetch("/api/archiumVersion");
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch version: ${response.status} ${response.statusText}`);
+                }
                 const data = await response.json();
-                setVersion(data.tag_name || data.name || "v1.5.2");
+                setVersion(data.version);
             } catch (error) {
                 console.error("Error fetching version:", error);
-                setVersion("v1.5.2");
+                setVersion("v1.5.3");
             } finally {
                 setLoading(false);
             }
@@ -96,8 +100,8 @@ export default function ArchiumPage() {
                             transition={{ delay: 0.4 }}
                         >
                             <Badge variant="outline" className="text-md px-3 py-1 mb-4">
-                                {loading ? (
-                                    <span className="inline-block w-16 h-4 bg-muted animate-pulse rounded"></span>
+                                {loading || !version ? (
+                                    <Skeleton className="w-20 h-6 rounded-md" />
                                 ) : (
                                     version
                                 )}
