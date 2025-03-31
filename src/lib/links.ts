@@ -12,6 +12,7 @@ import { SiBuymeacoffee } from "react-icons/si";
 export const Links = [
   // { href: "/blog", label: "Blog" },
   { href: "https://opium.bio/k", label: "Opium" },
+  { href: "/archium", label: "Archium" },
   { href: "https://github.com/q4ow/slop.sh", label: "Source", external: true },
 ];
 

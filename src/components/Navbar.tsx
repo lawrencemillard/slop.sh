@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="/"
-            className="text-2xl font-semibold hover:text-primary/80 ml-3 transition-colors"
+            className="text-2xl font-semibold hover:text-primary/80 mx-3 transition-colors"
           >
             slop.sh
           </Link>
