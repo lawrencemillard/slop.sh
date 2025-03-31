@@ -192,7 +192,7 @@ export default function ArchiumPage() {
                                 <div>
                                     <p className="mb-2">When you run <code className="bg-muted px-1 rounded">archium</code>, you will see:</p>
                                     <div className="bg-muted p-4 rounded-md overflow-x-auto font-mono text-sm">
-                                        Welcome to Archium, type "h" for help<br />
+                                        Welcome to Archium, type &quot;h&quot; for help<br />
                                         Archium $
                                     </div>
                                 </div>
