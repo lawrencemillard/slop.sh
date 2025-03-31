@@ -7,8 +7,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { LuExternalLink, LuTerminal, LuPackage, LuGithub, LuMail, LuBell, LuInfo, LuList, LuRocket, LuSearch, LuGitBranch, LuTrash, LuTrash2, LuFolderOutput } from "react-icons/lu";
+import { LuExternalLink, LuGithub, LuMail } from "react-icons/lu";
 import Link from "next/link";
+import Image from "next/image";
 import FeatureCard from "@/components/FeatureCard";
 import CopyButton from "@/components/CopyButton";
 import { dependencies, containerVariants, featureItems } from "@/lib/archium";
@@ -54,10 +55,13 @@ export default function ArchiumPage() {
                             transition={{ delay: 0.2 }}
                             className="flex justify-center mb-4"
                         >
-                            <img
+                            <Image
                                 src="/archium-transparent.svg"
                                 alt="Archium"
                                 className="w-32 h-auto"
+                                width={128}
+                                height={128}
+                                priority
                             />
                         </motion.div>
                         <motion.div
