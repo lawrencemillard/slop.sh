@@ -5,11 +5,9 @@ import { motion } from "framer-motion";
 import TypewriterComponent from "typewriter-effect";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import LastFm from "@/components/LastFm";
 import Socials from "@/components/Socials";
 import AboutSection from "@/components/AboutSection";
-// import { CoffeeButton } from "@/components/Coffee";
-// import WorkInProgress from "@/components/WorkInProgress";
+import { DiscordPresence } from "@/components/DiscordPresence";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 100 },
@@ -24,6 +22,7 @@ const containerVariants = {
 
 export default function HomeCard() {
   const [showTypewriter, setShowTypewriter] = useState(false);
+
   const calculateAge = (birthDate: Date): number => {
     const today = new Date();
     const birth = new Date(birthDate);
@@ -39,8 +38,6 @@ export default function HomeCard() {
 
     return age;
   };
-
-  const isLastFm = LastFm();
 
   const myAge = calculateAge(new Date("2009-03-25"));
 
@@ -142,39 +139,16 @@ export default function HomeCard() {
             >
               <Socials />
             </motion.div>
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ delay: 1.0 }}
-            >
-              <CoffeeButton />
-            </motion.div> */}
-            {isLastFm && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ delay: 1.2 }}
-              >
-                <LastFm />
-              </motion.div>
-            )}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ delay: 1.4 }}
-              className="h-0.5 w-full bg-border"
-            />
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
-              transition={{ delay: 1.6 }}
+              transition={{ delay: 1.4 }}
+              className="mt-6"
             >
-              <WorkInProgress />
-            </motion.div> */}
+              <DiscordPresence />
+            </motion.div>
           </div>
         </CardContent>
       </Card>
