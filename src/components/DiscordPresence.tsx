@@ -14,7 +14,7 @@ export function DiscordPresence() {
   const [, setConnected] = useState(false);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:6969/presence");
+    const ws = new WebSocket("ws://ws.slop.sh/presence");
 
     ws.onopen = () => {
       setConnected(true);
@@ -82,7 +82,6 @@ export function DiscordPresence() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{
-        delay: 0.2,
         type: "spring",
         stiffness: 100,
       }}
